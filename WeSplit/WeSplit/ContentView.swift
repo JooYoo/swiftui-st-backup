@@ -28,6 +28,16 @@ struct ContentView: View {
                 }
                 
                 Section{
+                    Picker("tip percentage", selection: $tipPercentage){
+                        ForEach(tipPercentages, id: \.self){
+                            Text("\($0)")
+                        }
+                    }.pickerStyle(.segmented)
+                } header: {
+                    Text("How much tip do you want to leave?")
+                }
+                
+                Section{
                     Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "CNY"))
                 }
             }.navigationTitle("WeSplit")
