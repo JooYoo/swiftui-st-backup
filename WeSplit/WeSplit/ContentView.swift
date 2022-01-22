@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FocusState private var amountIsFocused: Bool
+    
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
     @State private var tipPercentage = 20
-    
     let tipPercentages = [10, 15, 20, 25, 0]
     
     var totalPerPerson: Double {
@@ -28,6 +29,8 @@ struct ContentView: View {
                     // checkAmount TextField
                     TextField("Enter check amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "CNY"))
                         .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
+                    
                     // numberOfPeople Picker
                     Picker("Number of people", selection: $numberOfPeople){
                         ForEach(0..<99){
@@ -51,7 +54,16 @@ struct ContentView: View {
                 Section{
                     Text(totalPerPerson, format: .currency(code: Locale.current.currencyCode ?? "CNY"))
                 }
-            }.navigationTitle("WeSplit")
+            }
+            .navigationTitle("WeSplit")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done"){
+                        amountIsFocused = false
+                    }
+                }
+            }
         }
     }
 }
