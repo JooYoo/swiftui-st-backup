@@ -15,6 +15,8 @@ struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Monaco", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var userTappedNr = 0
+    @State private var round = 0
     
     var body: some View {
         
@@ -32,9 +34,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-                
-                
-                
+         
                 VStack(spacing: 15){
                     VStack{
                         Text("Tap the flag")
@@ -77,12 +77,20 @@ struct ContentView: View {
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
         } message: {
-            Text("Your score: \(score).")
+            if round == 3 {
+                Text("Over: your socre \(score)")
+            }else{
+                Text("That’s the flag of \(countries[userTappedNr])")
+            }
         }
         
     }
     
     func flagTapped(_ number: Int)  {
+        // count round
+        round += 1
+       print(round)
+        // calc score
         if correctAnswer == number {
             scoreTitle = "Correct"
             score += 1
@@ -91,10 +99,19 @@ struct ContentView: View {
             score -= 1
         }
         
+        // update user tapped
+        userTappedNr = number
+        // present alert()
         showingScore = true
     }
     
     func askQuestion(){
+        // check if end
+        if round == 3 {
+            score = 0
+            round = 0
+        }
+        // shuffle data
         countries = countries.shuffled()
         correctAnswer = Int.random(in: 0...2)
     }
