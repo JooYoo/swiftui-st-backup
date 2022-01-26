@@ -7,6 +7,33 @@
 
 import SwiftUI
 
+// view composition
+struct FlagImage: View {
+    var flageName: String
+    
+    var body: some View{
+        Image(flageName)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .shadow(radius: 5)
+    }
+}
+
+// custom modifier
+struct BigYellowTxt: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.yellow)
+    }
+}
+
+extension View {
+    func bigYellowTxt() -> some View{
+        modifier(BigYellowTxt())
+    }
+}
+
 struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
@@ -42,6 +69,7 @@ struct ContentView: View {
                             .foregroundStyle(.secondary)
                         Text(countries[correctAnswer])
                             .font(.largeTitle.weight(.semibold))
+                            .bigYellowTxt()
                     }
                     
                     ForEach (0..<3) { number in
@@ -49,10 +77,7 @@ struct ContentView: View {
                             // flag tapped
                             flagTapped(number)
                         } label:{
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
+                            FlagImage(flageName: countries[number])
                         }
                     }
                 }
