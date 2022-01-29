@@ -27,3 +27,9 @@
 </kbd>
 
 5. [BetterRest](https://github.com/JooYoo/swiftui-st-backup/tree/better-rest)
+
+<kbd>
+  <img src="https://user-images.githubusercontent.com/12739843/151662264-875f3145-3fd3-4eed-a53d-29ce69ecfcda.gif" width="200px"/>
+</kbd>
+
+6. [WordScramble](https://github.com/JooYoo/swiftui-st-backup/tree/word-scramble)
