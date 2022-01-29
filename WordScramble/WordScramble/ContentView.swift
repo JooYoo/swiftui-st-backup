@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var usedWords = [String]()
-    @State private var rootWord = "RootWord"
+    @State private var rootWord = ""
     @State private var newWord = ""
     
     
@@ -34,6 +34,7 @@ struct ContentView: View {
             .onSubmit(addNewWord)
             .navigationTitle(rootWord)
         }
+        .onAppear(perform: startGame)
     }
     
     func addNewWord(){
@@ -49,6 +50,26 @@ struct ContentView: View {
         
         // reset TextField
         newWord = ""
+    }
+    
+    func startGame()  {
+        // 1. find the txt url in Bundle
+        if let txtUrl = Bundle.main.url(forResource: "start", withExtension: "txt"){
+            // 2. load the txt into a string
+            if let txtAsString = try? String(contentsOf: txtUrl){
+                // 3. string => array
+                let allWords = txtAsString.components(separatedBy: "\n")
+                
+                // 4. pick a word random
+                rootWord = allWords.randomElement() ?? "abcdefgh"
+                
+                // 5. all ok => done
+                return
+            }
+        }
+        
+        // somthing wrong
+        fatalError("Load words failed")
     }
     
    
