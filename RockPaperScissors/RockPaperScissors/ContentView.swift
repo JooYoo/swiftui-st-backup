@@ -9,18 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     var rpc = ["✊🏼", "✋🏼", "✌🏼"]
-    
-    @State private var aiChoiceIdx = Int.random(in: 0...2)
-    @State private var shouldWin = Bool.random()
-    @State private var score = 0
-    @State private var round = 0
-    
-   enum res {
+    enum res {
         case win
         case lose
         case deuce
     }
+    let expectRoundAmount = 4
+    
+    @State private var aiChoiceIdx = Int.random(in: 0...2)
+    @State private var shouldWin = Bool.random()
     @State private var resState = res.deuce
+    @State private var score = 0
+    @State private var round = 1
+    
+    
+    @State private var showingAlert = false
+    @State private var alerTitle = "Game Over"
+    
     
     var body: some View {
         ZStack{
@@ -41,7 +46,7 @@ struct ContentView: View {
             
             VStack{
                 
-                Text("Round: \(round)/5")
+                Text("Round: \(round)/\(expectRoundAmount)")
                     .font(.system(size: 20))
                     .fontWeight(.semibold)
                 
@@ -81,6 +86,13 @@ struct ContentView: View {
             .padding()
             .foregroundColor(.white)
             
+        }
+        .alert(alerTitle, isPresented: $showingAlert) {
+            Button("Ok"){
+                restart()
+            }
+        } message: {
+            Text("Your final score is \(score)")
         }
     }
     
@@ -142,7 +154,22 @@ struct ContentView: View {
     }
     
     func nextRound(){
-        round += 1
+        // check if end
+        if round == expectRoundAmount {
+            // showing alert
+            showingAlert = true
+        } else {
+            // next round
+            round += 1
+            aiChoiceIdx = Int.random(in: 0...2)
+            shouldWin = Bool.random()
+        }
+    }
+    
+    func restart(){
+        round = 1
+        score = 0
+        resState = .deuce
         aiChoiceIdx = Int.random(in: 0...2)
         shouldWin = Bool.random()
     }
