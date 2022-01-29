@@ -12,6 +12,10 @@ struct ContentView: View {
     @State private var rootWord = ""
     @State private var newWord = ""
     
+    @State private var errorTitle = ""
+    @State private var errorMessage = ""
+    @State private var showingError = false
+    
     
     var body: some View {
         NavigationView{
@@ -33,8 +37,13 @@ struct ContentView: View {
             }
             .onSubmit(addNewWord)
             .navigationTitle(rootWord)
+            .onAppear(perform: startGame)
+            .alert(errorTitle, isPresented: $showingError) {
+                Button("Ok", role: .cancel){}
+            } message: {
+                Text(errorMessage)
+            }
         }
-        .onAppear(perform: startGame)
     }
     
     func addNewWord(){
@@ -45,8 +54,26 @@ struct ContentView: View {
         // prevent input empty
         guard answer.count > 0 else { return }
         
+        // valid input word
+        guard isOriginal(word: answer) else {
+            wordError(title: "Word used already", message: "No repeat word input 😡")
+            return
+        }
+        
+        guard isPossible(word: answer) else {
+            wordError(title: "Word not exist from the given word", message: "Can't spell that word from \(rootWord) 😤")
+            return
+        }
+        
+        guard isReal(word: answer) else {
+            wordError(title: "Not real word", message: "It's a fake english word 🤡")
+            return
+        }
+        
         // add to list
-        usedWords.insert(answer, at: 0)
+        withAnimation {
+            usedWords.insert(answer, at: 0)
+        }
         
         // reset TextField
         newWord = ""
@@ -72,6 +99,42 @@ struct ContentView: View {
         fatalError("Load words failed")
     }
     
+    func isOriginal(word:String)->Bool{
+        !usedWords.contains(word)
+    }
+    
+    func isPossible(word:String)->Bool{
+        var tempWord = rootWord
+        
+        for letter in word {
+            // check if current-letter exist in rootWord
+            if let pos = tempWord.firstIndex(of: letter){
+                // it exists, then remove to make sure this letter can't be used again
+                tempWord.remove(at: pos)
+            }else{
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func isReal(word: String)->Bool{
+        // 1. create a checker
+        let checker = UITextChecker()
+        // 2. create a range based on input-word
+        let range = NSRange(location: 0, length: word.utf16.count)
+        // 3. find the input-word misspelled range
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        // 4. check if misspelling exists
+        return misspelledRange.location == NSNotFound
+    }
+    
+    func wordError(title:String, message:String){
+        errorTitle = title
+        errorMessage = message
+        showingError = true
+    }
    
 }
 
