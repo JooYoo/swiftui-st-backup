@@ -12,21 +12,29 @@ struct ContentView: View {
     
     @State private var aiChoiceIdx = Int.random(in: 0...2)
     @State private var shouldWin = Bool.random()
-    @State private var isThisRoundWin = true
     @State private var score = 0
     @State private var round = 0
     
+   enum res {
+        case win
+        case lose
+        case deuce
+    }
+    @State private var resState = res.deuce
     
     var body: some View {
         ZStack{
-            // win: red: 0.02, green: 0.77, blue: 0.42
-            // lose: red: 1.00, green: 0.42, blue: 0.51
-            // deuce: red: 0.20, green: 0.67, blue: 0.88
-            if isThisRoundWin {
+
+            // bg-color
+            switch resState {
+            case .win:
                 Color(red: 0.02, green: 0.77, blue: 0.42)
                     .ignoresSafeArea()
-            }else{
+            case .lose:
                 Color(red: 1.00, green: 0.42, blue: 0.51)
+                    .ignoresSafeArea()
+            case .deuce:
+                Color(red: 0.20, green: 0.67, blue: 0.88)
                     .ignoresSafeArea()
             }
            
@@ -86,18 +94,24 @@ struct ContentView: View {
                 userShouldWinHandler()
             }else if(userChoosed == "✌🏼"){
                 userShouldLoseHandler()
+            }else{
+                resState = .deuce
             }
         case "✌🏼":
             if userChoosed == "✊🏼" {
                 userShouldWinHandler()
             } else if (userChoosed == "✋🏼"){
                 userShouldLoseHandler()
+            }else{
+                resState = .deuce
             }
         case "✋🏼":
             if userChoosed == "✌🏼" {
                 userShouldWinHandler()
             }else if(userChoosed == "✊🏼"){
                 userShouldLoseHandler()
+            }else{
+                resState = .deuce
             }
         default: ()
         }
@@ -110,20 +124,20 @@ struct ContentView: View {
     func userShouldWinHandler(){
         if shouldWin {
             score += 1
-            isThisRoundWin = true
+            resState = .win
         }else{
             score -= 1
-            isThisRoundWin = false
+            resState = .lose
         }
     }
     
     func userShouldLoseHandler(){
         if !shouldWin {
             score += 1
-            isThisRoundWin = true
+            resState = .win
         }else{
             score -= 1
-            isThisRoundWin = false
+            resState = .lose
         }
     }
     
