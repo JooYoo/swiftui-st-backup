@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootWord = ""
     @State private var newWord = ""
+    @State private var score = 0
     
     @State private var errorTitle = ""
     @State private var errorMessage = ""
@@ -18,31 +19,45 @@ struct ContentView: View {
     
     
     var body: some View {
-        NavigationView{
-            List{
-                Section{
-                    TextField("Enter your word", text: $newWord)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                }
-                
-                Section{
-                    ForEach(usedWords, id: \.self) { word in
-                        HStack{
-                            Image(systemName: "\(word.count).circle")
-                            Text(word)
+        VStack{
+            NavigationView{
+                List{
+                    Section{
+                        TextField("Enter your word", text: $newWord)
+                            .autocapitalization(.none)
+                            .disableAutocorrection(true)
+                    }
+                    
+                    Section{
+                        ForEach(usedWords, id: \.self) { word in
+                            HStack{
+                                Image(systemName: "\(word.count).circle")
+                                Text(word)
+                            }
                         }
                     }
+                    
                 }
+                .onSubmit(addNewWord)
+                .navigationTitle(rootWord)
+                .onAppear(perform: startGame)
+                .toolbar{
+                    Button("New round"){
+                        startGame()
+                        usedWords = [String]()
+                        score = 0
+                    }
+                }
+                .alert(errorTitle, isPresented: $showingError) {
+                    Button("Ok", role: .cancel){}
+                } message: {
+                    Text(errorMessage)
+                }
+                
+                
             }
-            .onSubmit(addNewWord)
-            .navigationTitle(rootWord)
-            .onAppear(perform: startGame)
-            .alert(errorTitle, isPresented: $showingError) {
-                Button("Ok", role: .cancel){}
-            } message: {
-                Text(errorMessage)
-            }
+            Text("Score: \(score)")
+                .font(.headline)
         }
     }
     
@@ -70,6 +85,11 @@ struct ContentView: View {
             return
         }
         
+        guard isLengthMoreThanThree(word: answer) else {
+            wordError(title: "Too short", message: "please input the word more than 3 letters")
+            return
+        }
+        
         // add to list
         withAnimation {
             usedWords.insert(answer, at: 0)
@@ -77,6 +97,9 @@ struct ContentView: View {
         
         // reset TextField
         newWord = ""
+        
+        // add score
+        score += 1
     }
     
     func startGame()  {
@@ -130,12 +153,17 @@ struct ContentView: View {
         return misspelledRange.location == NSNotFound
     }
     
+    func isLengthMoreThanThree(word: String)->Bool{
+        return word.count > 3
+    }
+    
     func wordError(title:String, message:String){
         errorTitle = title
         errorMessage = message
         showingError = true
+        score -= 1
     }
-   
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
