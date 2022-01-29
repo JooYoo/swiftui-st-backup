@@ -17,7 +17,13 @@
 3. [GuessFlag](https://github.com/JooYoo/swiftui-st-backup/tree/guess-flag)
 
 <kbd>
+  <img src="https://user-images.githubusercontent.com/12739843/151655287-2ec15571-0192-4514-b459-0d3f0cbc12f5.gif" width="200px"/>
+</kbd>
+
+4. [RockPaperScissors](https://github.com/JooYoo/swiftui-st-backup/tree/rock-paper-scissors)
+
+<kbd>
   <img src="https://user-images.githubusercontent.com/12739843/151595173-5b357e4b-84f8-40f2-a665-c4bd5e8cbbd9.gif" width="200px"/>
 </kbd>
 
-4. [BetterRest](https://github.com/JooYoo/swiftui-st-backup/tree/better-rest)
+5. [BetterRest](https://github.com/JooYoo/swiftui-st-backup/tree/better-rest)
