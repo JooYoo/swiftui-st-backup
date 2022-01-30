@@ -45,6 +45,11 @@ struct ContentView: View {
     @State private var userTappedNr = 0
     @State private var round = 0
     
+    // animation
+    @State private var spinDeg = 0.0
+    @State private var scaleSize = 1.0
+    @State private var opacityAmount = 1.0
+    
     var body: some View {
         
         ZStack{
@@ -61,7 +66,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                 
                 Spacer()
-         
+                
                 VStack(spacing: 15){
                     VStack{
                         Text("Tap the flag")
@@ -76,9 +81,23 @@ struct ContentView: View {
                         Button{
                             // flag tapped
                             flagTapped(number)
+                            
+                            // animation values
+                            withAnimation {
+                                spinDeg += 360
+                                scaleSize -= 0.2
+                                opacityAmount -= 0.5
+                            }
+
                         } label:{
                             FlagImage(flageName: countries[number])
                         }
+                        .rotation3DEffect(.degrees(number == userTappedNr ? spinDeg:0), axis: (x: 0, y: 1, z: 0) )
+                        //.animation(.default, value: spinDeg)
+                        .scaleEffect(number != userTappedNr ? scaleSize : 1)
+                        //.animation(.default, value: scaleSize)
+                        .opacity(number != userTappedNr ? opacityAmount : 1)
+                        .animation(.default, value: opacityAmount)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -114,7 +133,7 @@ struct ContentView: View {
     func flagTapped(_ number: Int)  {
         // count round
         round += 1
-       print(round)
+        
         // calc score
         if correctAnswer == number {
             scoreTitle = "Correct"
@@ -139,6 +158,10 @@ struct ContentView: View {
         // shuffle data
         countries = countries.shuffled()
         correctAnswer = Int.random(in: 0...2)
+        
+        // rest animation modifier amount
+        scaleSize = 1.0
+        opacityAmount = 1.0
     }
 }
 
