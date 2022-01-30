@@ -74,7 +74,7 @@ struct ContentView: View {
                 // output
                 Section{
                     // result Text
-                    Text(String(format: "%.2f", res))
+                    Text(res.formatted())
                     // Picker
                     Picker("output unit picker", selection: $outputU) {
                         ForEach(units, id: \.self){
