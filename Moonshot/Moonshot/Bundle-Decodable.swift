@@ -22,6 +22,11 @@ extension Bundle {
         
         // 3. decode
         let decoder = JSONDecoder()
+        // format date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        // decode JSON
         guard let loaded = try? decoder.decode(T.self, from: data) else {
             fatalError("Load JSON failed: decode error")
         }
