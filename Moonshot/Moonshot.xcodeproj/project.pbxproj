@@ -17,6 +17,7 @@
 		9A15335727A9920500FB6E14 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15335627A9920500FB6E14 /* Bundle-Decodable.swift */; };
 		9A15335927A99C1400FB6E14 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15335827A99C1400FB6E14 /* Mission.swift */; };
 		9A15335B27A9BB9100FB6E14 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15335A27A9BB9100FB6E14 /* Color-Theme.swift */; };
+		9A15335D27AADF1200FB6E14 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A15335C27AADF1200FB6E14 /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9A15335627A9920500FB6E14 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		9A15335827A99C1400FB6E14 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		9A15335A27A9BB9100FB6E14 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
+		9A15335C27AADF1200FB6E14 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				9A15334027A8453800FB6E14 /* MoonshotApp.swift */,
 				9A15334227A8453800FB6E14 /* ContentView.swift */,
+				9A15335C27AADF1200FB6E14 /* MissionView.swift */,
 				9A15335427A9916900FB6E14 /* Astronaut.swift */,
 				9A15335827A99C1400FB6E14 /* Mission.swift */,
 				9A15335627A9920500FB6E14 /* Bundle-Decodable.swift */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A15335D27AADF1200FB6E14 /* MissionView.swift in Sources */,
 				9A15335527A9916900FB6E14 /* Astronaut.swift in Sources */,
 				9A15335B27A9BB9100FB6E14 /* Color-Theme.swift in Sources */,
 				9A15334327A8453800FB6E14 /* ContentView.swift in Sources */,
