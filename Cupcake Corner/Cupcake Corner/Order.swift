@@ -34,4 +34,24 @@ class Order: ObservableObject {
         }
         return true
     }
+    
+    // Checkout View
+    var cost: Double{
+        var cost = 0.0
+        
+        // $2/cake
+        cost = Double(quantity * 2)
+        // complicated cake
+        cost = cost + Double(type/2)
+        // extra frosting $1/cake
+        if extraFrosting {
+            cost = cost + Double(quantity)
+        }
+        // add sprinkles $0.5/cake
+        if addSprinkles {
+            cost = cost + Double(quantity) * 0.5
+        }
+        
+        return cost
+    }
 }
