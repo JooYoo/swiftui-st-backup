@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @Environment(\.managedObjectContext) var moc
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.title),
         SortDescriptor(\.author)
@@ -22,8 +22,6 @@ struct ContentView: View {
             List {
                 ForEach(books) { book in
                     NavigationLink {
-                        // TODO: Detail View
-//                        Text(book.title ?? "Unknown Title")
                         DetailView(book: book)
                     } label: {
                         HStack {
@@ -39,9 +37,13 @@ struct ContentView: View {
                         }
                     }
                 }
+                .onDelete(perform: deleteItems)
             }
             .navigationTitle("Bookworm")
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showingAddScreen.toggle()
@@ -54,6 +56,19 @@ struct ContentView: View {
                 AddBookView()
             }
         }
+    }
+    
+    func deleteItems(at offsets: IndexSet){
+        for i in offsets {
+            // find the book
+            let book = books[i]
+            
+            // delete book via Context
+            moc.delete(book)
+        }
+        
+        // save changes via Context
+        try? moc.save()
     }
 }
 
