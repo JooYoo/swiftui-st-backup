@@ -8,6 +8,7 @@
 import Foundation
 
 class WeatherVM: ObservableObject {
+    @Published var input: String = ""
         
     @Published var condition: String = ""
     @Published var description: String = ""
@@ -52,10 +53,11 @@ class WeatherVM: ObservableObject {
         }
     }
     
-    func fetchData(name:String?) async {
+    func fetchData(name:String) async {
         // 1. create URL
+        // TODO: !!!!!
         let apiKey = "🥰"
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(name ?? "ulm")&units=metric&appid=\(apiKey)") else {
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(name)&units=metric&appid=\(apiKey)") else {
             print("read Endpoint url error")
             return
         }
@@ -74,9 +76,9 @@ class WeatherVM: ObservableObject {
                     self.condition = weather.main
                     self.description = weather.description
                     self.icon = weather.icon
-                    self.temp = String(format: "%.0f℃", main.temp)
-                    self.tempMin = String(format: "%.0f℃", main.temp_min)
-                    self.tempMax = String(format: "%.0f℃", main.temp_max)
+                    self.temp = String(format: "%.0f°", main.temp)
+                    self.tempMin = String(format: "%.0f°", main.temp_min)
+                    self.tempMax = String(format: "%.0f°", main.temp_max)
                     self.name = decoded.name
                 }
                 
