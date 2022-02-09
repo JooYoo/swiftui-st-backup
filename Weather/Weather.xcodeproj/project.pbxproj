@@ -23,6 +23,7 @@
 		9A945F9F27B221B1002162EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A945FA627B22533002162EB /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		9A945FAA27B2289D002162EB /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		9A945FAD27B41AB2002162EB /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 				9A945F9827B221AD002162EB /* WeatherApp.swift */,
 				9A945FA627B22533002162EB /* WeatherModel.swift */,
 				9A945FAA27B2289D002162EB /* WeatherViewModel.swift */,
+				9A945FAD27B41AB2002162EB /* Secrets.xcconfig */,
 				9A945F9A27B221AD002162EB /* ContentView.swift */,
 				9A945F9C27B221B1002162EB /* Assets.xcassets */,
 				9A945F9E27B221B1002162EB /* Preview Content */,
@@ -155,6 +157,7 @@
 /* Begin XCBuildConfiguration section */
 		9A945FA127B221B1002162EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A945FAD27B41AB2002162EB /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -216,6 +219,7 @@
 		};
 		9A945FA227B221B1002162EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A945FAD27B41AB2002162EB /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -280,6 +284,7 @@
 				DEVELOPMENT_TEAM = 48J67Q2762;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,6 +314,7 @@
 				DEVELOPMENT_TEAM = 48J67Q2762;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -54,9 +54,10 @@ class WeatherVM: ObservableObject {
     }
     
     func fetchData(name:String) async {
+        // 0. get apiKey from config
+        let apiKey = getKey()
+        
         // 1. create URL
-        // TODO: !!!!!
-        let apiKey = "🥰"
         guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(name)&units=metric&appid=\(apiKey)") else {
             print("read Endpoint url error")
             return
@@ -81,13 +82,24 @@ class WeatherVM: ObservableObject {
                     self.tempMax = String(format: "%.0f°", main.temp_max)
                     self.name = decoded.name
                 }
-                
-                print(decoded)
-                
+                //print(decoded)
             }
             
         } catch {
             print("fetch Data error")
         }
+    }
+    
+    func getKey() -> String{
+        // get apiKey from Bundle
+        let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
+        
+        // check if key is ok
+        guard let key = apiKey, !key.isEmpty else {
+            print("API key does not exist")
+            return ""
+        }
+        
+        return key
     }
 }
