@@ -12,32 +12,35 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            
             VStack{
-                
                 Spacer()
                 
-                Image(systemName: vm.sfId)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200)
-                    .padding(.horizontal)
-                Text(vm.temp)
-                    .font(.system(size: 70))
-                    .fontWeight(.heavy)
-                
-                Spacer()
-                
-                Text(vm.name)
-                    .font(.system(size: 60))
-                    .fontWeight(.bold)
-                Text(vm.description)
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                Text("\(vm.tempMin) ~ \(vm.tempMax)")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top, 1)
+                if vm.temp.isEmpty {
+                    ProgressView()
+                }else{
+                    Image(systemName: vm.sfId)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        .padding(.horizontal)
+                    Text(vm.temp)
+                        .font(.system(size: 70))
+                        .fontWeight(.heavy)
+                    
+                    Spacer()
+                    
+                    Text(vm.name)
+                        .font(.system(size: 60))
+                        .fontWeight(.bold)
+                    Text(vm.description)
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    
+                    Text("\(vm.tempMin) ~ \(vm.tempMax)")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.top, 1)
+                }
                 
                 Spacer()
             }
@@ -51,6 +54,7 @@ struct ContentView: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
         .task {
             await vm.fetchData(name: "Ulm")
         }
