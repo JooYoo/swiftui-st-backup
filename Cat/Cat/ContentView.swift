@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = CatVM()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List{
+                
+            }
+            .navigationTitle("Cat")
+        }
+        .task {
+            await vm.fetchData()
+        }
     }
 }
 
