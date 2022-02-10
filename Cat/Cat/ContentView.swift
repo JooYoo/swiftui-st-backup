@@ -12,7 +12,16 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            List{
+            List(vm.breeds, id:\.id){ breed in
+                HStack{
+                    // TODO: display image as avatar
+                    Text(breed.id)
+                    VStack(alignment: .leading){
+                        Text(breed.name)
+                        Text(breed.temperament)
+                    }
+                    
+                }
                 
             }
             .navigationTitle("Cat")

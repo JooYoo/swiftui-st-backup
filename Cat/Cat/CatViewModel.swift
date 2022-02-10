@@ -12,7 +12,7 @@ class CatVM: ObservableObject {
     
     func fetchData() async {
         // 1. URL
-        guard let url = URL(string: "https://api.thecatapi.com/v1/breeds?api_key=bda29416-bcb3-4cf4-9166-232459ed50d9") else {
+        guard let url = URL(string: "https://api.thecatapi.com/v1/breeds") else {
             print("url error")
             return
         }
@@ -22,11 +22,16 @@ class CatVM: ObservableObject {
             if let safeData = data {
                 
                 do {
-                    // 3. decodw
+                    // 3. decode
                     let breeds = try JSONDecoder().decode([Breed].self, from: safeData)
                     print("🥰\(breeds.count)")
+                    
+                    DispatchQueue.main.async {
+                        self.breeds = breeds                        
+                    }
+                    
                 } catch {
-                    print("🤡 \(error)")
+                    print("decode error: \(error)")
                 }
             }
         }
