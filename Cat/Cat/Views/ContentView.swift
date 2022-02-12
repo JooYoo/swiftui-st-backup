@@ -13,13 +13,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List(vm.results, id:\.id){ breed in
-                HStack{
-                    NavigationLink{
-                        DetailView(breed: breed)
-                    } label: {
+                NavigationLink{
+                    DetailView(breed: breed)
+                } label: {
+                    HStack{
                         CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
                             .frame(width: 100, height: 100)
-
+                        
                         VStack(alignment: .leading){
                             Text(breed.name)
                                 .font(.title3.bold())
@@ -27,7 +27,6 @@ struct ContentView: View {
                                 .font(.caption)
                         }
                     }
-
                 }
             }
             .searchable(text: $vm.searchingFor)
