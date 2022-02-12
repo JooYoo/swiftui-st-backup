@@ -17,7 +17,7 @@
 ## Views
 
 - NavigationView
-- ListView
+- List
   - NavigationLink
   - searchable
 - ScrollView
