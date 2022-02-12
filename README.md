@@ -95,7 +95,7 @@
       <kbd><img src="https://user-images.githubusercontent.com/12739843/153251221-84732e8e-913c-48b7-92a1-ebb6aac71bac.gif" width="200px" alt="Weather"/></kbd>
     </td> 
     <td>
-      ii
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/153708224-2e8a4a14-1a85-403b-9f4a-2ed47447e17f.gif" width="200px" alt="Cat"/></kbd>
     </td>
   </tr>
 </table>
