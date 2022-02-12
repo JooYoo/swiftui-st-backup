@@ -6,6 +6,7 @@
 
 - get current Weather
 - searchable
+- API: https://openweathermap.org/api
 
 ## Practice topics
 
@@ -19,6 +20,7 @@
 - Image
 - ProgressView
 - Task
+- searchable
 
 ## Keywords
 
