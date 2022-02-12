@@ -17,19 +17,8 @@ struct ContentView: View {
                     NavigationLink{
                         DetailView(breed: breed)
                     } label: {
-                        AsyncImage(url: URL(string: (breed.image?.url)!)) { phase in
-                            if let image = phase.image{
-                                image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                            }else if phase.error != nil{
-                                Text("🐈")
-                            }else{
-                                ProgressView()
-                            }
-                        }
-                        .frame(width: 100, height: 100)
+                        CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
+                            .frame(width: 100, height: 100)
 
                         VStack(alignment: .leading){
                             Text(breed.name)

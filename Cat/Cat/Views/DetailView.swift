@@ -14,20 +14,8 @@ struct DetailView: View {
         
         ScrollView{
             VStack{
-                AsyncImage(url: URL(string: (breed.image?.url)!)) { phase in
-                    if let image = phase.image{
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 5))
-                        
-                    }else if phase.error != nil{
-                        Text("🐈")
-                    }else{
-                        ProgressView()
-                    }
-                }
-                .frame(maxHeight: 250)
+                CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
+                    .frame(maxHeight: 250)
                 Text(breed.name)
                     .font(.largeTitle.bold())
                 Text(breed.origin)

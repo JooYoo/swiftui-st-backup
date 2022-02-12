@@ -24,18 +24,15 @@ class CatVM: ObservableObject {
                 do {
                     // 3. decode
                     let breeds = try JSONDecoder().decode([Breed].self, from: safeData)
-                    print("🥰\(breeds.count)")
                     
                     DispatchQueue.main.async {
-                        self.breeds = breeds                        
+                        self.breeds = breeds
                     }
-                    
                 } catch {
                     print("decode error: \(error)")
                 }
             }
         }
         task.resume()
-        
     }
 }
