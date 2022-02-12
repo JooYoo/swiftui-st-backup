@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CatImageView: View {
     let uwrappedUrlString: String
-    
+
     var body: some View {
         AsyncImage(url: URL(string: uwrappedUrlString)){ phase in
             

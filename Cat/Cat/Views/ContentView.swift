@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            List(vm.breeds, id:\.id){ breed in
+            List(vm.results, id:\.id){ breed in
                 HStack{
                     NavigationLink{
                         DetailView(breed: breed)
@@ -30,9 +30,10 @@ struct ContentView: View {
 
                 }
             }
+            .searchable(text: $vm.searchingFor)
             .navigationTitle("Cat")
-            .navigationViewStyle(.stack)
         }
+        .navigationViewStyle(.stack)
         .task {
             await vm.fetchData()
         }

@@ -7,9 +7,21 @@
 
 import Foundation
 class CatVM: ObservableObject {
-    
+    // model
     @Published var breeds:[Breed] = []
+    // search-filter
+    @Published var searchingFor = ""
     
+    // search-filter
+    var results:[Breed] {
+        if searchingFor.isEmpty {
+            return breeds
+        } else {
+            return breeds.filter{ $0.name.contains(searchingFor) }
+        }
+    }
+    
+    // networing
     func fetchData() async {
         // 1. URL
         guard let url = URL(string: "https://api.thecatapi.com/v1/breeds") else {
