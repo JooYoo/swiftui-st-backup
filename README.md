@@ -1,4 +1,12 @@
-# SwiftUI mini Projects
+# SwiftUI mini-apps Playground
+
+My iOS Dev · **SwiftUI** learning playground. They are all mini-apps. I’m trying to cover all the essential knowledge while building those mini-apps.
+Each of the mini-apps has its own branch. Clicking the app name go to the corresponding branch. I summarized the app development detail in the branch README. If I followed a tutorial to implement the app. I will write the resource in the app README, otherwise, 👨🏻‍💻 can be found in the front of the mini-app name. It means I built it by myself.
+
+## Todos
+- [ ] build more apps
+- [ ] complete the READMEs of the previous projects
+- [ ] to be a Junior iOS Developer
 
 ## Single View
 
