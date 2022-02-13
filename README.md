@@ -111,7 +111,7 @@
       <kbd><img src="https://user-images.githubusercontent.com/12739843/152687604-678f6129-a8f7-4357-bcec-f7891296e9a7.gif" width="200px" alt="Bookworm"/></kbd>
     </td> 
     <td>
-      <kbd><img src="https://user-images.githubusercontent.com/12739843/153751978-12caa8a8-3676-42ae-8823-5dc824ad6e42.gif" width="200px" alt="Task"/></kbd>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/153761873-c8a80c16-1f2a-4afa-b1ba-cf8b72abe5a1.gif" width="200px" alt="Task"/></kbd>
     </td>
   </tr>
 </table>
