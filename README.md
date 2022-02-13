@@ -8,13 +8,13 @@
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/we-split">WeSplit</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/unit-converter">UnitConverter</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/unit-converter">👨🏻‍💻 UnitConverter</a>
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/guess-flag">GuessFlag</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/rock-paper-scissors">RockPaperScissors</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/rock-paper-scissors">👨🏻‍💻 RockPaperScissors</a>
     </th>
   </tr>
   <tr>
@@ -38,8 +38,6 @@
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/word-scramble">WordScramble</a>
     </th>
-    <th></th>
-    <th></th>
   </tr>
   <tr>
     <td>
@@ -48,8 +46,6 @@
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/151662264-875f3145-3fd3-4eed-a53d-29ce69ecfcda.gif" width="200px" alt="WordScramble"/></kbd>
     </td>
-    <td></td>
-    <td></td>
   </tr>
 </table>
 
@@ -84,10 +80,10 @@
 <table>
   <tr>
     <th>
-     <a href="https://github.com/JooYoo/swiftui-st-backup/tree/weather">Weather</a>
+     <a href="https://github.com/JooYoo/swiftui-st-backup/tree/weather">👨🏻‍💻 Weather</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat">Cat</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat">👨🏻‍💻 Cat</a>
     </th>
   </tr>
   <tr>
