@@ -12,18 +12,27 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            VStack{
-                TextField("input todo...", text: $vm.userInput)
-                    .onSubmit {
-                        vm.addTodo(txt: vm.userInput)
-                    }
-                Divider()
-                List(vm.todosFetched, id: \.id){ todo in
-                    Text(todo.txt)
+            List{
+                Section{
+                    TextField("input todo...", text: $vm.userInput)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
                 }
+                Section{
+                    ForEach(vm.todos, id: \.id){ todo in
+                        Text(todo.txt)
+                            .strikethrough(false)
+                            .padding(.vertical, 15)
+                        
+                    }
+                }
+            }
+            .onSubmit {
+                vm.addTodo(txt: vm.userInput)
             }
             .navigationTitle("Todo")
         }
+        .navigationViewStyle(.stack)
     }
 }
 
