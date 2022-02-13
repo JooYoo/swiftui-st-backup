@@ -14,23 +14,28 @@ struct ContentView: View {
         NavigationView{
             List{
                 Section{
-                    TextField("input todo...", text: $vm.userInput)
+                    TextField("input todo...", text: $vm.inputVal)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                 }
                 Section{
+                    
                     ForEach(vm.todos, id: \.id){ todo in
                         Text(todo.txt)
-                            .strikethrough(false)
+                            .strikethrough(todo.isDone)
                             .padding(.vertical, 15)
-                        
+                            .onTapGesture(count: 1) {
+                                // TODO: add db function
+                                vm.updateTodo(id: todo.id)
+                            }
                     }
                 }
             }
             .onSubmit {
-                vm.addTodo(txt: vm.userInput)
+                vm.addTodo(txt: vm.inputVal)
             }
             .navigationTitle("Todo")
+            
         }
         .navigationViewStyle(.stack)
     }
