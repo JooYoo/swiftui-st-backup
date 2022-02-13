@@ -12,8 +12,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            List(vm.todos, id: \.id){ todo in
-                Text(todo.txt)
+            VStack{
+                TextField("input todo...", text: $vm.userInput)
+                    .onSubmit {
+                        vm.addTodo(txt: vm.userInput)
+                    }
+                Divider()
+                List(vm.todosFetched, id: \.id){ todo in
+                    Text(todo.txt)
+                }
             }
             .navigationTitle("Todo")
         }
