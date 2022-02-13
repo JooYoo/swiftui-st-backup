@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var vm = TodoVM()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List(vm.todos, id: \.id){ todo in
+                Text(todo.txt)
+            }
+            .navigationTitle("Todo")
+        }
     }
 }
 
