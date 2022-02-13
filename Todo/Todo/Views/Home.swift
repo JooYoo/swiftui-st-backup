@@ -90,7 +90,7 @@ struct Home: View {
                 }
                 
             }
-            .navigationTitle("Todo")
+            .navigationTitle("Task")
             .toolbar {
                 Button{
                     // add task
