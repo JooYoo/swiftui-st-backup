@@ -99,7 +99,6 @@ class TodoVM: ObservableObject {
                 try localRealm.write({
                     // delete
                     localRealm.delete(theTodo)
-                    
                     // reload collection
                     getTodos()
                 })
