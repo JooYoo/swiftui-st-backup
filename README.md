@@ -2,9 +2,9 @@
 
 <kbd><img src="https://user-images.githubusercontent.com/12739843/153761873-c8a80c16-1f2a-4afa-b1ba-cf8b72abe5a1.gif" width="200px" alt="Task"/></kbd>
 
-## Inspiration
+## Resources
 
-- implemented example from https://youtu.be/Leq7UiqebhU
+- tutorial: https://youtu.be/Leq7UiqebhU
 
 ## Features
 
