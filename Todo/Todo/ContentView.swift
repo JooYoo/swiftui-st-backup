@@ -14,16 +14,12 @@ struct ContentView: View {
         NavigationView{
             List{
                 Section{
-                    TextField("input todo...", text: $vm.inputVal)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
+                    InputBox(inputValue: $vm.inputVal)
                 }
                 Section{
                     ForEach(vm.todos, id: \.id){ todo in
-                        if !todo.isInvalidated{
-                            Text(todo.txt)
-                                .strikethrough(todo.isDone)
-                                .padding(.vertical, 15)
+                        if !todo.isInvalidated {
+                            ListItem(todo: todo)
                                 .onTapGesture(count: 1) {
                                     vm.updateTodo(id: todo.id)
                                 }
@@ -42,7 +38,6 @@ struct ContentView: View {
                 vm.addTodo(txt: vm.inputVal)
             }
             .navigationTitle("Todo")
-            
         }
         .navigationViewStyle(.stack)
     }
