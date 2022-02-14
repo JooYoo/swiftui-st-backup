@@ -19,15 +19,22 @@ struct ContentView: View {
                         .autocapitalization(.none)
                 }
                 Section{
-                    
                     ForEach(vm.todos, id: \.id){ todo in
-                        Text(todo.txt)
-                            .strikethrough(todo.isDone)
-                            .padding(.vertical, 15)
-                            .onTapGesture(count: 1) {
-                                // TODO: add db function
-                                vm.updateTodo(id: todo.id)
-                            }
+                        if !todo.isInvalidated{
+                            Text(todo.txt)
+                                .strikethrough(todo.isDone)
+                                .padding(.vertical, 15)
+                                .onTapGesture(count: 1) {
+                                    vm.updateTodo(id: todo.id)
+                                }
+                                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                                    Button(role: .destructive){
+                                        vm.deleteTodo(id: todo.id)
+                                    } label: {
+                                        Image(systemName: "trash")
+                                    }
+                                }
+                        }
                     }
                 }
             }

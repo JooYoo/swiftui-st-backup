@@ -86,7 +86,28 @@ class TodoVM: ObservableObject {
         }
     }
     
-    
+    // MARK: - delete item
+    func deleteTodo(id: ObjectId){
+        if let localRealm = localRealm {
+            do {
+                // get the todo by id
+                let theTodo = localRealm.objects(Todo.self).filter(NSPredicate(format: "id == %@", id))
+                
+                guard !theTodo.isEmpty else { return }
+                
+                // change data in db
+                try localRealm.write({
+                    // delete
+                    localRealm.delete(theTodo)
+                    
+                    // reload collection
+                    getTodos()
+                })
+            } catch {
+                print("🐞 delete Todo error:", error)
+            }
+        }
+    }
     
     
     // MARK: - easy approach
