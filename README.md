@@ -114,7 +114,7 @@ Each of the mini-apps has its own branch. Clicking the app name go to the corres
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/task">Task</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/todo">Todo</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/todo">👨🏻‍💻 Todo</a>
     </th>
   </tr>
   <tr>
