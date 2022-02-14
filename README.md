@@ -124,5 +124,8 @@ Each of the mini-apps has its own branch. Clicking the app name go to the corres
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/153761873-c8a80c16-1f2a-4afa-b1ba-cf8b72abe5a1.gif" width="200px" alt="Task"/></kbd>
     </td>
+    <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/153925173-b71e14d3-abca-4582-80d0-3c5f8d683b20.gif" width="200px" alt="Todo"/></kbd>      
+    </td>
   </tr>
 </table>
