@@ -93,6 +93,9 @@ Each of the mini-apps has its own branch. Clicking the app name go to the corres
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat">👨🏻‍💻 Cat</a>
     </th>
+    <th>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/pokedex">👨🏻‍💻 Pokédex</a>
+    </th>
   </tr>
   <tr>
     <td>
