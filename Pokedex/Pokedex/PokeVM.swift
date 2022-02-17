@@ -9,13 +9,7 @@ import Foundation
 
 class PokeVM: ObservableObject {
     
-    @Published var pokeUrls = [PokemonUrl]()
-    
-    @Published var pokeId = 0
-    @Published var pokeName = ""
-    @Published var pokeHeight = 0
-    @Published var pokeWeight = 0
-    @Published var pokeSpriteUrl = ""
+    @Published var pokemons = [Pokemon]()
     
     func getPokeUrls() async {
         // 1. endpoint Url
@@ -32,7 +26,9 @@ class PokeVM: ObservableObject {
                     let pokeUrlStore = try JSONDecoder().decode(PokeUrlStore.self, from: safeData)
                     
                     DispatchQueue.main.async {
-                        self.pokeUrls = pokeUrlStore.results
+                        for res in pokeUrlStore.results {
+                            self.getPokemon(url: res.url)
+                        }
                     }
                 } catch {
                     print("🐞 getPokeUrls decoding failed:", error)
@@ -43,7 +39,7 @@ class PokeVM: ObservableObject {
         task.resume()
     }
     
-    func getPokemon(url: String) async {
+    func getPokemon(url: String) {
         // 1. URL
         guard let url = URL(string: url) else {
             return
@@ -59,11 +55,8 @@ class PokeVM: ObservableObject {
                     let pokemon = try JSONDecoder().decode(Pokemon.self, from: safeData)
                     
                     DispatchQueue.main.async {
-                        self.pokeId = pokemon.id
-                        self.pokeName = pokemon.name
-                        self.pokeHeight = pokemon.height
-                        self.pokeWeight = pokemon.weight
-                        self.pokeSpriteUrl = pokemon.sprites.front_default
+                        let newPokemon = Pokemon(id: pokemon.id, name: pokemon.name, height: pokemon.height, weight: pokemon.weight, sprites: pokemon.sprites)
+                        self.pokemons.append(newPokemon)
                     }
                 } catch {
                     print("🐞 getPokemon decoding failed:", error)

@@ -14,12 +14,12 @@ struct ContentView: View {
         NavigationView{
             List{
                 Section{
-                    ForEach(vm.pokeUrls, id: \.id) { pokeUrl in
+                    ForEach(vm.pokemons, id: \.id) { pokemon in
                         
                         NavigationLink{
-                            Text(vm.pokeName)
+                            Text(pokemon.name)
                         } label: {
-                            ListRow(url: pokeUrl.url)
+                            ListRow(pokemon: pokemon)
                         }
                     }
                 }

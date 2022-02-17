@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ListRow: View {
-    @StateObject var vm = PokeVM()
-    let url:String
+    let pokemon: Pokemon
     
     var body: some View {
         HStack{
             // Poke Image
-            AsyncImage(url: URL(string: vm.pokeSpriteUrl)){ phase in
+            AsyncImage(url: URL(string: pokemon.sprites.front_default)){ phase in
                 if let image = phase.image {
                     image
                         .resizable()
@@ -29,19 +28,16 @@ struct ListRow: View {
             
             // Poke Txt
             HStack{
-                Image(systemName: "\(vm.pokeId).circle")
+                Image(systemName: "\(pokemon.id).circle")
                 VStack(alignment: .leading){
                     
-                    Text(vm.pokeName)
+                    Text(pokemon.name)
                         .font(.title2.bold())
-                    Text("Weight: \(vm.pokeWeight)")
+                    Text("Weight: \(pokemon.weight)")
                         .font(.caption)
                 }
             }
             
-        }
-        .task{
-            await vm.getPokemon(url: url)
         }
     }
 }
