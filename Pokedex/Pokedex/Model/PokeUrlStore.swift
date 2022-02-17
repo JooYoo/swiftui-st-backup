@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct PokeUrlRepo: Codable {
+struct PokeUrlStore: Codable {
     let results:[PokemonUrl]
 }
 
-struct PokemonUrl: Codable {
+struct PokemonUrl: Codable, Identifiable {
+    let id = UUID()
     let url: String
 }
 

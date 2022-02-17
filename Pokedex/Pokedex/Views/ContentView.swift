@@ -10,20 +10,24 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm = PokeVM()
     
-    
     var body: some View {
         NavigationView{
             List{
                 Section{
-                    ForEach(vm.pokeUrls, id: \.url) { pokeUrl in
-                        Text(pokeUrl.url)
+                    ForEach(vm.pokeUrls, id: \.id) { pokeUrl in
+                        
+                        NavigationLink{
+                            Text(vm.pokeName)
+                        } label: {
+                            ListRow(url: pokeUrl.url)
+                        }
                     }
                 }
             }
             .navigationTitle("PokeDex")
         }
         .task {
-            await vm.getPokeUrls()
+          await vm.getPokeUrls()
         }
     }
 }
