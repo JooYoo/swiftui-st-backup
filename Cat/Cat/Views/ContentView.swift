@@ -16,17 +16,7 @@ struct ContentView: View {
                 NavigationLink{
                     DetailView(breed: breed)
                 } label: {
-                    HStack{
-                        CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
-                            .frame(width: 100, height: 100)
-                        
-                        VStack(alignment: .leading){
-                            Text(breed.name)
-                                .font(.title3.bold())
-                            Text(breed.temperament)
-                                .font(.caption)
-                        }
-                    }
+                    ListRow(breed: breed)
                 }
             }
             .searchable(text: $vm.searchingFor)
