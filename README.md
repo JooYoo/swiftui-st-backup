@@ -104,6 +104,9 @@ Each of the mini-apps has its own branch. Clicking the app name go to the corres
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/153708224-2e8a4a14-1a85-403b-9f4a-2ed47447e17f.gif" width="200px" alt="Cat"/></kbd>
     </td>
+    <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/154542578-644fd796-82fe-4b40-b42b-cb776778aa5c.gif" width="200px" alt="Pokedex"/></kbd>
+    </td>
   </tr>
 </table>
 
