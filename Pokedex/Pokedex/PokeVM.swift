@@ -11,7 +11,16 @@ class PokeVM: ObservableObject {
     
     @Published var pokemons = [Pokemon]()
     
+    
+    init(){
+        Task{
+            await getPokeUrls()
+        }
+    }
+    
     func getPokeUrls() async {
+        // 0. clean up collection
+        pokemons = []
         // 1. endpoint Url
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151") else{
             return
@@ -27,7 +36,10 @@ class PokeVM: ObservableObject {
                     
                     DispatchQueue.main.async {
                         for res in pokeUrlStore.results {
-                            self.getPokemon(url: res.url)
+                            print(res.url)
+                            Task {
+                                await self.getPokemon(url: res.url)
+                            }
                         }
                     }
                 } catch {
@@ -39,7 +51,7 @@ class PokeVM: ObservableObject {
         task.resume()
     }
     
-    func getPokemon(url: String) {
+    func getPokemon(url: String) async {
         // 1. URL
         guard let url = URL(string: url) else {
             return

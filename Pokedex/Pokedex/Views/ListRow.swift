@@ -28,16 +28,20 @@ struct ListRow: View {
             
             // Poke Txt
             HStack{
-                Image(systemName: "\(pokemon.id).circle")
+                Text("\(pokemon.id)")
+                    .font(.system(size: 15))
+                    .padding(5)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white, lineWidth: 1)
+                    )
                 VStack(alignment: .leading){
-                    
                     Text(pokemon.name)
                         .font(.title2.bold())
                     Text("Weight: \(pokemon.weight)")
                         .font(.caption)
                 }
             }
-            
         }
     }
 }

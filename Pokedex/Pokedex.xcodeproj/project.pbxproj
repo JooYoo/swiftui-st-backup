@@ -60,8 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				9A90523227BD7747003A4E2A /* PokedexApp.swift */,
-				9A90524427BEA414003A4E2A /* Model */,
 				9A90524227BD7948003A4E2A /* PokeVM.swift */,
+				9A90524427BEA414003A4E2A /* Model */,
 				9A90524927BEBA92003A4E2A /* Views */,
 				9A90523627BD774B003A4E2A /* Assets.xcassets */,
 				9A90523827BD774B003A4E2A /* Preview Content */,

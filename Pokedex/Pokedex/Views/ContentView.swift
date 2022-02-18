@@ -18,6 +18,7 @@ struct ContentView: View {
                         
                         NavigationLink{
                             Text(pokemon.name)
+                            Text("\(pokemon.id)")
                         } label: {
                             ListRow(pokemon: pokemon)
                         }
@@ -26,8 +27,10 @@ struct ContentView: View {
             }
             .navigationTitle("PokeDex")
         }
-        .task {
-          await vm.getPokeUrls()
+        .refreshable {
+            Task{
+                await vm.getPokeUrls()
+            }
         }
     }
 }
