@@ -13,7 +13,7 @@ Each of the mini-apps has its own branch. Clicking the app name go to the corres
 <table>
   <tr>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/we-split">WeSplit</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/we-split" target="_blank">WeSplit</a>
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/unit-converter">👨🏻‍💻 UnitConverter</a>
@@ -62,13 +62,13 @@ Each of the mini-apps has its own branch. Clicking the app name go to the corres
 <table>
   <tr>
     <th>
-     <a href="https://github.com/JooYoo/swiftui-st-backup/tree/i-expense">iExpends</a>
+     <a href="https://github.com/JooYoo/swiftui-st-backup/tree/i-expense" target="_blank">iExpends</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/moon-shot">Moonshot</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/moon-shot" target="_blank">Moonshot</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cupcake-corner">Cupcake Corner</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cupcake-corner" target="_blank">Cupcake Corner</a>
     </th>
   </tr>
   <tr>
