@@ -20,6 +20,9 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Cat")
+            .refreshable {
+                vm.checkUpdate()
+            }
         }
         .navigationViewStyle(.stack)
     }

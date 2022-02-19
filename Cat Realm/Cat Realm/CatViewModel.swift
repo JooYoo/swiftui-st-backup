@@ -15,14 +15,13 @@ class CatVM: ObservableObject {
     // realm
     private(set) var localRealm: Realm?
     
-    
     init(){
         startRealm()
         getBreeds()
     }
     
     // MARK: - Networking
-    func fetchData() async {
+    func fetchData(completion: @escaping (_ apiBreeds: [Breed])->Void) async {
         // 1. URL
         guard let url = URL(string: "https://api.thecatapi.com/v1/breeds") else {
             print("url error")
@@ -38,13 +37,7 @@ class CatVM: ObservableObject {
                     let breeds = try JSONDecoder().decode([Breed].self, from: safeData)
                     
                     DispatchQueue.main.async {
-                        // API Data => UI
-                        self.breeds = breeds
-                        
-                        // API Data => DB
-                        breeds.forEach { breed in
-                            self.saveBreed(breed)
-                        }
+                        completion(breeds)
                     }
                 } catch {
                     print("decode error: \(error)")
@@ -54,8 +47,30 @@ class CatVM: ObservableObject {
         task.resume()
     }
     
+    // check for new data in API
+    func checkUpdate(){
+        if let localRealm = localRealm {
+            // get saved breeds from DB
+            let savedBreeds = localRealm.objects(Breed.self)
+            
+            // check for updating
+            Task{
+                await fetchData(completion: { apiBreeds in
+                    if savedBreeds.count != apiBreeds.count {
+                        // API data => UI
+                        self.breeds = apiBreeds
+                        // API data => DB
+                        apiBreeds.forEach { apiBreed in
+                            self.saveBreed(apiBreed)
+                        }
+                    }
+                })
+            }
+        }
+    }
+    
     // MARK: - Persistent Data
-    // init Realm in local
+    // init Realm
     func startRealm(){
         do {
             Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1)
@@ -68,19 +83,24 @@ class CatVM: ObservableObject {
     // retrieve items
     func getBreeds(){
         if let localRealm = localRealm {
-            // get all breeds from DB
-            let allBreeds = localRealm.objects(Breed.self)
+            // get saved breeds from DB
+            let savedBreeds = localRealm.objects(Breed.self)
             
-            print("⏱:", allBreeds.count)
-            
-            // empty DB => fetch from API
-            if allBreeds.isEmpty{
+            // saved data is empty
+            if savedBreeds.isEmpty{
                 Task {
-                    await fetchData()
+                    await fetchData(completion: { apiBreeds in
+                        // API data => UI
+                        self.breeds = apiBreeds
+                        // API data => DB
+                        apiBreeds.forEach { apiBreed in
+                            self.saveBreed(apiBreed)
+                        }
+                    })
                 }
             } else{
-                // append data into local-collection
-                allBreeds.forEach { dataBreed in
+                // saved data exists: DB => UI
+                savedBreeds.forEach { dataBreed in
                     breeds.append(dataBreed)
                 }
             }
@@ -106,5 +126,4 @@ class CatVM: ObservableObject {
             }
         }
     }
-    
 }
