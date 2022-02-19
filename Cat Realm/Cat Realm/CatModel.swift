@@ -6,16 +6,17 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Breed: Codable {
-    let id: String
-    let name: String
-    let temperament: String
-    let origin: String
-    let description: String
-    let image: CatImg?
+class Breed: Object, Codable  {
+    @Persisted var id: String // FIXME: what if the API-JSON has no id
+    @Persisted var name: String
+    @Persisted var temperament: String
+    @Persisted var origin: String
+//  @Persisted var description: String // FIXME: why 'description' can't be used
+    @Persisted var image: CatImg?
 }
 
-struct CatImg: Codable {
-    let url: String?
+class CatImg: Object, Codable {
+    @Persisted var url: String?
 }

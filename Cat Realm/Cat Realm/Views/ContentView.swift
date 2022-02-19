@@ -22,9 +22,6 @@ struct ContentView: View {
             .navigationTitle("Cat")
         }
         .navigationViewStyle(.stack)
-        .task {
-            await vm.fetchData()
-        }
     }
 }
 
