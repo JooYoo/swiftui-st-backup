@@ -12,8 +12,9 @@ struct ListRow: View {
     
     var body: some View {
         HStack{
-            CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
-                .frame(width: 100, height: 100)
+//            CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
+//                .frame(width: 100, height: 100)
+            ImageCacheView(url: URL(string: breed.image?.url ?? "nil"), size: 100.0)
             VStack(alignment: .leading){
                 Text(breed.name)
                     .font(.title3.bold())

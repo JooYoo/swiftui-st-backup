@@ -14,8 +14,9 @@ struct DetailView: View {
         
         ScrollView{
             VStack{
-                CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
-                    .frame(maxHeight: 250)
+//                CatImageView(uwrappedUrlString: breed.image?.url ?? "nil")
+//                    .frame(maxHeight: 250)
+                ImageCacheView(url: URL(string: breed.image?.url ?? "nil"), size:.infinity)
                 Text(breed.name)
                     .font(.largeTitle.bold())
                 Text(breed.origin)
