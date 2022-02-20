@@ -20,7 +20,7 @@ class PhotoViewModel: ObservableObject {
     // MARK: - Networking
     func fetchPhotos() async{
         // 1. URL
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/photos?_start=0&_limit=30") else {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/photos?_start=0&_limit=300") else {
             print("🐞 url error")
             return
         }

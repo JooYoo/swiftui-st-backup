@@ -16,19 +16,21 @@ struct ContentView: View {
                 ForEach(vm.photos, id: \.id){ photo in
                     HStack{
                         
-                        AsyncImage(url: URL(string: photo.thumbnailUrl)){ phrase in
-                            if let img = phrase.image{
-                                img
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                            } else if phrase.error != nil {
-                                Text("🌠")
-                                    .font(.system(size: 50))
-                            } else {
-                                ProgressView()
-                            }
-                        }
+//                        AsyncImage(url: URL(string: photo.thumbnailUrl)){ phrase in
+//                            if let img = phrase.image{
+//                                img
+//                                    .resizable()
+//                                    .scaledToFit()
+//                                    .frame(width: 100, height: 100)
+//                            } else if phrase.error != nil {
+//                                Text("🌠")
+//                                    .font(.system(size: 50))
+//                            } else {
+//                                ProgressView()
+//                            }
+//                        }
+                        
+                        URLImageView(url: URL(string: photo.thumbnailUrl))
                         
                         VStack(alignment: .leading){
                             Text("\(photo.id)")
