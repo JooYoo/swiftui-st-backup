@@ -42,6 +42,7 @@ struct ContentView: View {
             }
             .navigationTitle("JSON Placeholder")
         }
+        .navigationViewStyle(.stack)
     }
 }
 

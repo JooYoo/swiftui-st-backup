@@ -29,16 +29,24 @@ class ImageLoader: ObservableObject {
         // 2. TODO: Task
         let request = URLRequest(url: url)
         
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else{
-            throw NetworkError.badRequest
+        if let cachedImage = Self.cache.object(forKey: url.absoluteString as NSString){
+            uiImage = cachedImage
+        } else {
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else{
+                throw NetworkError.badRequest
+            }
+            
+            guard let image = UIImage(data: data) else {
+                throw NetworkError.unsupportedImage
+            }
+            
+            // cache the image
+            Self.cache.setObject(image, forKey: url.absoluteString as NSString)
+            
+            uiImage = image
         }
-        
-        guard let image = UIImage(data: data) else {
-            throw NetworkError.unsupportedImage
-        }
-        
-        uiImage = image
     }
 }
