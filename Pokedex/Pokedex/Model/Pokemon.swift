@@ -8,13 +8,13 @@
 import Foundation
 
 struct Pokemon: Codable {
-    let id: Int
-    let name: String
-    let height: Int
-    let weight: Int
-    let sprites: PokeSprites
+    var id: Int = 0
+    var name: String = ""
+    var height: Int = 0
+    var weight: Int = 0
+    var sprites: PokeSprites = PokeSprites()
 }
 
 struct PokeSprites: Codable {
-    let front_default: String
+    var front_default: String = ""
 }
