@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
     @StateObject var vm = PhotoViewModel()
@@ -15,22 +16,14 @@ struct ContentView: View {
             List{
                 ForEach(vm.photos, id: \.id){ photo in
                     HStack{
-                        
-//                        AsyncImage(url: URL(string: photo.thumbnailUrl)){ phrase in
-//                            if let img = phrase.image{
-//                                img
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .frame(width: 100, height: 100)
-//                            } else if phrase.error != nil {
-//                                Text("🌠")
-//                                    .font(.system(size: 50))
-//                            } else {
-//                                ProgressView()
-//                            }
-//                        }
-                        
-                        URLImageView(url: URL(string: photo.thumbnailUrl))
+
+                        KFImage(URL(string: photo.thumbnailUrl)!)
+                            .placeholder({
+                                ProgressView()
+                            })
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
                         
                         VStack(alignment: .leading){
                             Text("\(photo.id)")

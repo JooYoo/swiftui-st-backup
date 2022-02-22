@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A606D6B27C55EDF00DA44A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A606D6A27C55EDF00DA44A9 /* Kingfisher */; };
 		9A9052B727C24070003A4E2A /* Json_PlaceholderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */; };
 		9A9052B927C24070003A4E2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052B827C24070003A4E2A /* ContentView.swift */; };
 		9A9052BB27C24073003A4E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9052BA27C24073003A4E2A /* Assets.xcassets */; };
 		9A9052BE27C24073003A4E2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9052BD27C24073003A4E2A /* Preview Assets.xcassets */; };
 		9A9052C527C248D1003A4E2A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052C427C248D1003A4E2A /* PhotoModel.swift */; };
 		9A9052C727C2499E003A4E2A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052C627C2499E003A4E2A /* PhotoViewModel.swift */; };
-		9A9052C927C25486003A4E2A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052C827C25486003A4E2A /* ImageLoader.swift */; };
-		9A9052CB27C258BF003A4E2A /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052CA27C258BF003A4E2A /* URLImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +24,6 @@
 		9A9052BD27C24073003A4E2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A9052C427C248D1003A4E2A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		9A9052C627C2499E003A4E2A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
-		9A9052C827C25486003A4E2A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		9A9052CA27C258BF003A4E2A /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A606D6B27C55EDF00DA44A9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +60,8 @@
 				9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */,
 				9A9052C427C248D1003A4E2A /* PhotoModel.swift */,
 				9A9052C627C2499E003A4E2A /* PhotoViewModel.swift */,
-				9A9052C827C25486003A4E2A /* ImageLoader.swift */,
 				9A9052BA27C24073003A4E2A /* Assets.xcassets */,
 				9A9052B827C24070003A4E2A /* ContentView.swift */,
-				9A9052CA27C258BF003A4E2A /* URLImageView.swift */,
 				9A9052BC27C24073003A4E2A /* Preview Content */,
 			);
 			path = "Json Placeholder";
@@ -95,6 +91,9 @@
 			dependencies = (
 			);
 			name = "Json Placeholder";
+			packageProductDependencies = (
+				9A606D6A27C55EDF00DA44A9 /* Kingfisher */,
+			);
 			productName = "Json Placeholder";
 			productReference = 9A9052B327C24070003A4E2A /* Json Placeholder.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 9A9052AA27C24070003A4E2A;
+			packageReferences = (
+				9A606D6927C55EDF00DA44A9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 9A9052B427C24070003A4E2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,8 +153,6 @@
 			files = (
 				9A9052C527C248D1003A4E2A /* PhotoModel.swift in Sources */,
 				9A9052C727C2499E003A4E2A /* PhotoViewModel.swift in Sources */,
-				9A9052CB27C258BF003A4E2A /* URLImageView.swift in Sources */,
-				9A9052C927C25486003A4E2A /* ImageLoader.swift in Sources */,
 				9A9052B927C24070003A4E2A /* ContentView.swift in Sources */,
 				9A9052B727C24070003A4E2A /* Json_PlaceholderApp.swift in Sources */,
 			);
@@ -357,6 +357,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9A606D6927C55EDF00DA44A9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9A606D6A27C55EDF00DA44A9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A606D6927C55EDF00DA44A9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A9052AB27C24070003A4E2A /* Project object */;
 }
