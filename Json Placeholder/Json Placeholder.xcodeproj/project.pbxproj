@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A606D6B27C55EDF00DA44A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A606D6A27C55EDF00DA44A9 /* Kingfisher */; };
+		9A64F28B27C564DC00335E50 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F28A27C564DC00335E50 /* ListItem.swift */; };
 		9A9052B727C24070003A4E2A /* Json_PlaceholderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */; };
 		9A9052B927C24070003A4E2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052B827C24070003A4E2A /* ContentView.swift */; };
 		9A9052BB27C24073003A4E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9052BA27C24073003A4E2A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A64F28A27C564DC00335E50 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		9A9052B327C24070003A4E2A /* Json Placeholder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Placeholder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json_PlaceholderApp.swift; sourceTree = "<group>"; };
 		9A9052B827C24070003A4E2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				9A9052C627C2499E003A4E2A /* PhotoViewModel.swift */,
 				9A9052BA27C24073003A4E2A /* Assets.xcassets */,
 				9A9052B827C24070003A4E2A /* ContentView.swift */,
+				9A64F28A27C564DC00335E50 /* ListItem.swift */,
 				9A9052BC27C24073003A4E2A /* Preview Content */,
 			);
 			path = "Json Placeholder";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A64F28B27C564DC00335E50 /* ListItem.swift in Sources */,
 				9A9052C527C248D1003A4E2A /* PhotoModel.swift in Sources */,
 				9A9052C727C2499E003A4E2A /* PhotoViewModel.swift in Sources */,
 				9A9052B927C24070003A4E2A /* ContentView.swift in Sources */,

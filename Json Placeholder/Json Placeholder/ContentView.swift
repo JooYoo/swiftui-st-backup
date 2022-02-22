@@ -14,23 +14,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                ForEach(vm.photos, id: \.id){ photo in
-                    HStack{
-
-                        KFImage(URL(string: photo.thumbnailUrl)!)
-                            .placeholder({
-                                ProgressView()
-                            })
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                        
-                        VStack(alignment: .leading){
-                            Text("\(photo.id)")
-                                .font(.title3)
-                            Text(photo.title)
-                        }
+                ForEach(0..<vm.photos.count, id: \.self){ i in
+                    
+                    if i == vm.photos.count - 1 {
+                        ListItem(photo: vm.photos[i], isLast: true, vm: self.vm)
+                    } else {
+                        ListItem(photo: vm.photos[i], isLast: false, vm: self.vm)
                     }
+                    
+                    
                 }
             }
             .navigationTitle("JSON Placeholder")

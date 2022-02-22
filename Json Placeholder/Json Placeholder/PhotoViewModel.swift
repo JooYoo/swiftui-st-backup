@@ -10,6 +10,7 @@ import Foundation
 class PhotoViewModel: ObservableObject {
     
     @Published var photos = [Photo]()
+    @Published var count = 0
     
     init(){
         Task{
@@ -20,7 +21,7 @@ class PhotoViewModel: ObservableObject {
     // MARK: - Networking
     func fetchPhotos() async{
         // 1. URL
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/photos?_start=0&_limit=300") else {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/photos?_start=\(count)&_limit=10") else {
             print("🐞 url error")
             return
         }
@@ -33,8 +34,11 @@ class PhotoViewModel: ObservableObject {
                     
                     let apiPhotos = try JSONDecoder().decode([Photo].self, from: safeData)
                     
+                    let oldPhotos = self.photos
+                    
                     DispatchQueue.main.async {
-                        self.photos = apiPhotos
+                        self.photos = oldPhotos + apiPhotos
+                        self.count += 10
                     }
                     
                 }
