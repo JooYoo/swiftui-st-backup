@@ -16,12 +16,9 @@
 		9A90529A27C10E3F003A4E2A /* CatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90529927C10E3F003A4E2A /* CatModel.swift */; };
 		9A90529C27C10E4E003A4E2A /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90529B27C10E4E003A4E2A /* CatViewModel.swift */; };
 		9A90529E27C10E89003A4E2A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90529D27C10E89003A4E2A /* DetailView.swift */; };
-		9A9052A027C10EB4003A4E2A /* CatImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90529F27C10EB4003A4E2A /* CatImageView.swift */; };
 		9A9052A227C10ECB003A4E2A /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052A127C10ECB003A4E2A /* ListRow.swift */; };
 		9A9052A727C11DA7003A4E2A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9A9052A627C11DA7003A4E2A /* Realm */; };
 		9A9052A927C11DA7003A4E2A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9A9052A827C11DA7003A4E2A /* RealmSwift */; };
-		9A9052CD27C276E1003A4E2A /* ImageCacheView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052CC27C276E1003A4E2A /* ImageCacheView.swift */; };
-		9A9052CF27C27724003A4E2A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052CE27C27724003A4E2A /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +31,7 @@
 		9A90529927C10E3F003A4E2A /* CatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatModel.swift; sourceTree = "<group>"; };
 		9A90529B27C10E4E003A4E2A /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 		9A90529D27C10E89003A4E2A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		9A90529F27C10EB4003A4E2A /* CatImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImageView.swift; sourceTree = "<group>"; };
 		9A9052A127C10ECB003A4E2A /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
-		9A9052CC27C276E1003A4E2A /* ImageCacheView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheView.swift; sourceTree = "<group>"; };
-		9A9052CE27C27724003A4E2A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +70,6 @@
 				9A90528B27C10E1F003A4E2A /* Cat_RealmApp.swift */,
 				9A90529927C10E3F003A4E2A /* CatModel.swift */,
 				9A90529B27C10E4E003A4E2A /* CatViewModel.swift */,
-				9A9052CE27C27724003A4E2A /* ImageLoader.swift */,
 				9A90528F27C10E21003A4E2A /* Assets.xcassets */,
 				9A9052A327C10EDD003A4E2A /* Views */,
 				9A90529127C10E21003A4E2A /* Preview Content */,
@@ -107,8 +100,6 @@
 			children = (
 				9A9052A127C10ECB003A4E2A /* ListRow.swift */,
 				9A606D6727C53E1700DA44A9 /* KFImageCache.swift */,
-				9A9052CC27C276E1003A4E2A /* ImageCacheView.swift */,
-				9A90529F27C10EB4003A4E2A /* CatImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,15 +184,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A90529A27C10E3F003A4E2A /* CatModel.swift in Sources */,
-				9A9052CD27C276E1003A4E2A /* ImageCacheView.swift in Sources */,
 				9A90529C27C10E4E003A4E2A /* CatViewModel.swift in Sources */,
 				9A606D6827C53E1700DA44A9 /* KFImageCache.swift in Sources */,
 				9A90528E27C10E1F003A4E2A /* ContentView.swift in Sources */,
 				9A90529E27C10E89003A4E2A /* DetailView.swift in Sources */,
-				9A9052CF27C27724003A4E2A /* ImageLoader.swift in Sources */,
 				9A90528C27C10E1F003A4E2A /* Cat_RealmApp.swift in Sources */,
 				9A9052A227C10ECB003A4E2A /* ListRow.swift in Sources */,
-				9A9052A027C10EB4003A4E2A /* CatImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
