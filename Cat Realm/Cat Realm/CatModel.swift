@@ -9,12 +9,26 @@ import Foundation
 import RealmSwift
 
 class Breed: Object, Codable  {
-    @Persisted var id: String // FIXME: what if the API-JSON has no id
+    @Persisted var id : String
     @Persisted var name: String
     @Persisted var temperament: String
     @Persisted var origin: String
-//  @Persisted var description: String // FIXME: why 'description' can't be used
+    @Persisted var additonialInfo: String
     @Persisted var image: CatImg?
+    
+    override static func primaryKey() -> String? {
+        "id"
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case temperament
+        case origin
+        case additonialInfo = "description"
+        case image
+        
+    }
 }
 
 class CatImg: Object, Codable {

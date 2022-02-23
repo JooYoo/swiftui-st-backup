@@ -23,9 +23,8 @@ struct DetailView: View {
                 Text(breed.temperament)
                     .font(.caption)
                 Divider()
-                // FIXME: can't use description
-                //                Text(breed.description)
-                //                    .padding(.horizontal, 20)
+                Text(breed.additonialInfo)
+                    .padding(.horizontal, 20)
             }
             .padding()
             .navigationTitle("Detail")
