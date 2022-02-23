@@ -16,10 +16,14 @@ struct ContentView: View {
             List{
                 ForEach(0..<vm.photos.count, id: \.self){ i in
                     
-                    if i == vm.photos.count - 1 {
-                        ListItem(photo: vm.photos[i], isLast: true, vm: self.vm)
-                    } else {
-                        ListItem(photo: vm.photos[i], isLast: false, vm: self.vm)
+                    NavigationLink{
+                        Text(vm.photos[i].title)
+                    } label: {
+                        if i == vm.photos.count - 1 {
+                            ListItem(photo: vm.photos[i], isLast: true, vm: self.vm)
+                        } else {
+                            ListItem(photo: vm.photos[i], isLast: false, vm: self.vm)
+                        }
                     }
                     
                     
