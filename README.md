@@ -114,6 +114,9 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/154542578-644fd796-82fe-4b40-b42b-cb776778aa5c.gif" width="200px" alt="Pokedex"/></kbd>
     </td>
+    <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/155391195-7d501039-495b-4207-bcb4-2b7f902dd3b1.gif" width="200px" alt="JSONPlaceholder"/></kbd>      
+    </td>
   </tr>
 </table>
 
