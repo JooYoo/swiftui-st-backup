@@ -93,15 +93,13 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat">👨🏻‍💻 Cat</a>
       <br>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat-refactor">Cat Refactor</a>
-      <br>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat-realm">👨🏻‍💻 Cat Realm</a>
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/pokedex">👨🏻‍💻 Pokédex</a>
     </th>
     <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/jsonplaceholder">👨🏻‍💻 JSON Placeholder</a>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/jsonplaceholder">👨🏻‍💻 Infinite Scroll</a>
     </th>
   </tr>
   <tr>
