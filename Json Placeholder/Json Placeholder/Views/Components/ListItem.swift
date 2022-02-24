@@ -21,19 +21,8 @@ struct ListItem: View {
             //                            .resizable()
             //                            .scaledToFit()
             //                            .frame(width: 100, height: 100)
-            AsyncImage(url: URL(string: photo.thumbnailUrl)){ phrase in
-                if let img = phrase.image {
-                    img
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                } else if phrase.error != nil {
-                    Text("🐈")
-                        .font(.system(size: 30))
-                }else{
-                    ProgressView()
-                }
-            }
+            
+            ImageView(photo: photo, sizeWidth: 100.0, sizeHeight: 100.0)
             
             VStack(alignment: .leading){
                 Text("\(photo.id)")

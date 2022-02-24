@@ -17,7 +17,8 @@ struct ContentView: View {
                 ForEach(0..<vm.photos.count, id: \.self){ i in
                     
                     NavigationLink{
-                        Text(vm.photos[i].title)
+                        //Text(vm.photos[i].title)
+                        DetailView(photo: vm.photos[i])
                     } label: {
                         if i == vm.photos.count - 1 {
                             ListItem(photo: vm.photos[i], isLast: true, vm: self.vm)

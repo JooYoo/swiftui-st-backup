@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A606D6B27C55EDF00DA44A9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A606D6A27C55EDF00DA44A9 /* Kingfisher */; };
 		9A64F28B27C564DC00335E50 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F28A27C564DC00335E50 /* ListItem.swift */; };
+		9A64F29027C7DEF700335E50 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F28F27C7DEF700335E50 /* ImageView.swift */; };
+		9A64F29327C7E0FC00335E50 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F29227C7E0FC00335E50 /* DetailView.swift */; };
 		9A9052B727C24070003A4E2A /* Json_PlaceholderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */; };
 		9A9052B927C24070003A4E2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9052B827C24070003A4E2A /* ContentView.swift */; };
 		9A9052BB27C24073003A4E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A9052BA27C24073003A4E2A /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		9A64F28A27C564DC00335E50 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		9A64F28F27C7DEF700335E50 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		9A64F29227C7E0FC00335E50 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9A9052B327C24070003A4E2A /* Json Placeholder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json Placeholder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json_PlaceholderApp.swift; sourceTree = "<group>"; };
 		9A9052B827C24070003A4E2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +44,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A64F28C27C7DE4700335E50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A9052C427C248D1003A4E2A /* PhotoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A64F28D27C7DE5600335E50 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A9052C627C2499E003A4E2A /* PhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A64F28E27C7DE6100335E50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A9052B827C24070003A4E2A /* ContentView.swift */,
+				9A64F29227C7E0FC00335E50 /* DetailView.swift */,
+				9A64F29127C7E0D000335E50 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A64F29127C7E0D000335E50 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9A64F28A27C564DC00335E50 /* ListItem.swift */,
+				9A64F28F27C7DEF700335E50 /* ImageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9A9052AA27C24070003A4E2A = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				9A9052B627C24070003A4E2A /* Json_PlaceholderApp.swift */,
-				9A9052C427C248D1003A4E2A /* PhotoModel.swift */,
-				9A9052C627C2499E003A4E2A /* PhotoViewModel.swift */,
+				9A64F28C27C7DE4700335E50 /* Model */,
+				9A64F28D27C7DE5600335E50 /* ViewModel */,
 				9A9052BA27C24073003A4E2A /* Assets.xcassets */,
-				9A9052B827C24070003A4E2A /* ContentView.swift */,
-				9A64F28A27C564DC00335E50 /* ListItem.swift */,
+				9A64F28E27C7DE6100335E50 /* Views */,
 				9A9052BC27C24073003A4E2A /* Preview Content */,
 			);
 			path = "Json Placeholder";
@@ -154,8 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A64F29027C7DEF700335E50 /* ImageView.swift in Sources */,
 				9A64F28B27C564DC00335E50 /* ListItem.swift in Sources */,
 				9A9052C527C248D1003A4E2A /* PhotoModel.swift in Sources */,
+				9A64F29327C7E0FC00335E50 /* DetailView.swift in Sources */,
 				9A9052C727C2499E003A4E2A /* PhotoViewModel.swift in Sources */,
 				9A9052B927C24070003A4E2A /* ContentView.swift in Sources */,
 				9A9052B727C24070003A4E2A /* Json_PlaceholderApp.swift in Sources */,
