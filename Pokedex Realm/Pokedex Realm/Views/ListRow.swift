@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ListRow: View {
     let url: String
-    
     @StateObject private var vm = PokeVM()
     
     var body: some View {
@@ -49,13 +48,10 @@ struct ListRow: View {
                 }
             }
         }
-        .onAppear{
-            Task{
-                await vm.getPokemon(url: url)
-            }
+        .task {
+            await vm.getPokemon(url: url)
         }
     }
-    
 }
 
 //struct ListRow_Previews: PreviewProvider {

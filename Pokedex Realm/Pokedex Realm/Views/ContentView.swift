@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm = PokeUrlVM()
     
+    
     var body: some View {
         NavigationView{
             List{
@@ -18,11 +19,6 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("PokeDex")
-        }
-        .refreshable {
-            Task{
-                await vm.getPokeUrls()
-            }
         }
     }
 }

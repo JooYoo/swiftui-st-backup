@@ -64,8 +64,7 @@
 				9A64F2A027C7ED5800335E50 /* Pokedex_RealmApp.swift */,
 				9A64F2B227C7EE3A00335E50 /* Models */,
 				9A64F2B727C7EEAB00335E50 /* ViewModels */,
-				9A64F2A227C7ED5800335E50 /* ContentView.swift */,
-				9A64F2B827C7EEDB00335E50 /* ListRow.swift */,
+				9A64F2BA27C7F8E600335E50 /* Views */,
 				9A64F2A427C7ED5D00335E50 /* Assets.xcassets */,
 				9A64F2A627C7ED5D00335E50 /* Preview Content */,
 			);
@@ -96,6 +95,15 @@
 				9A64F2B527C7EE9400335E50 /* PokeUrlVM.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9A64F2BA27C7F8E600335E50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A64F2A227C7ED5800335E50 /* ContentView.swift */,
+				9A64F2B827C7EEDB00335E50 /* ListRow.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

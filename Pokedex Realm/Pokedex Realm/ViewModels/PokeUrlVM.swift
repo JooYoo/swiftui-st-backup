@@ -13,12 +13,12 @@ class PokeUrlVM: ObservableObject {
     
     
     init(){
-        Task{
-            await getPokeUrls()
+        getPokeUrls { pokemonUrls in
+            self.pokeUrls = pokemonUrls
         }
     }
     
-    func getPokeUrls() async {
+    func getPokeUrls(  completed: @escaping (_ pokemonUrls: [PokemonUrl])->Void) {
         // 1. endpoint Url
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151") else{
             return
@@ -33,7 +33,7 @@ class PokeUrlVM: ObservableObject {
                     let pokeUrlStore = try JSONDecoder().decode(PokeUrlStore.self, from: safeData)
                     
                     DispatchQueue.main.async {
-                        self.pokeUrls = pokeUrlStore.results
+                        completed(pokeUrlStore.results)
                     }
                 } catch {
                     print("🐞 getPokeUrls decoding failed:", error)
