@@ -11,7 +11,6 @@ struct PokeUrlStore: Codable {
     let results:[PokemonUrl]
 }
 
-struct PokemonUrl: Codable, Identifiable {
-    let id = UUID()
+struct PokemonUrl: Codable, Hashable {
     let url: String
 }

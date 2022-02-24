@@ -9,16 +9,26 @@ import Foundation
 
 class PokeUrlVM: ObservableObject {
     
-    @Published var pokeUrls = [PokemonUrl]()
+    @Published var pokemons = [Pokemon]()
+    
+    var orderedPokemons:[Pokemon]  {
+        return pokemons.sorted(by: {$0.id<$1.id})
+    }
     
     
     init(){
         getPokeUrls { pokemonUrls in
-            self.pokeUrls = pokemonUrls
+            
+            pokemonUrls.forEach { pokeUrl in
+                self.getPokemon(url: pokeUrl.url) { apiPokemon in
+                    self.pokemons.append(apiPokemon)
+                }
+            }
+            
         }
     }
     
-    func getPokeUrls(  completed: @escaping (_ pokemonUrls: [PokemonUrl])->Void) {
+    func getPokeUrls(completed: @escaping (_ pokemonUrls: [PokemonUrl])->Void) {
         // 1. endpoint Url
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151") else{
             return
@@ -41,6 +51,35 @@ class PokeUrlVM: ObservableObject {
             }
         }
         // 4. start task
+        task.resume()
+    }
+    
+    func getPokemon(url: String, completed: @escaping (_ apiPokemon: Pokemon)->Void) {
+        // 1. URL
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        // 2. task
+        let task = URLSession.shared.dataTask(with: url) { data, error, res in
+            
+            if let safeData = data {
+                
+                // 3. decode
+                do {
+                    let apiPoke = try JSONDecoder().decode(Pokemon.self, from: safeData)
+                    
+                    DispatchQueue.main.async {
+                        //                        self.pokemon = apiPoke
+                        completed(apiPoke)
+                    }
+                } catch {
+                    print("🐞 getPokemon decoding failed:", error)
+                }
+            }
+        }
+        
+        // 4. run task
         task.resume()
     }
 }

@@ -82,8 +82,8 @@
 		9A64F2B227C7EE3A00335E50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9A64F2AE27C7EE0E00335E50 /* Pokemon.swift */,
 				9A64F2B027C7EE3500335E50 /* PokeUrlStore.swift */,
+				9A64F2AE27C7EE0E00335E50 /* Pokemon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,8 +91,8 @@
 		9A64F2B727C7EEAB00335E50 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				9A64F2B327C7EE6800335E50 /* PokeVM.swift */,
 				9A64F2B527C7EE9400335E50 /* PokeUrlVM.swift */,
+				9A64F2B327C7EE6800335E50 /* PokeVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

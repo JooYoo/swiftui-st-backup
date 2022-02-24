@@ -10,12 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm = PokeUrlVM()
     
-    
     var body: some View {
         NavigationView{
             List{
-                ForEach(vm.pokeUrls, id: \.id) { pokeUrl in
-                    ListRow(url: pokeUrl.url)
+                ForEach(vm.orderedPokemons, id: \.id) { poke in
+                    ListRow(pokemon: poke)
                 }
             }
             .navigationTitle("PokeDex")

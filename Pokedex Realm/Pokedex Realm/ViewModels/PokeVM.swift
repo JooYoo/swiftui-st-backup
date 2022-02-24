@@ -26,7 +26,7 @@ class PokeVM: ObservableObject {
                     let apiPoke = try JSONDecoder().decode(Pokemon.self, from: safeData)
                     
                     DispatchQueue.main.async {
-                        self.pokemon = Pokemon(id: apiPoke.id, name: apiPoke.name, height: apiPoke.height, weight: apiPoke.weight, sprites: apiPoke.sprites)
+                        self.pokemon = apiPoke
                     }
                 } catch {
                     print("🐞 getPokemon decoding failed:", error)
