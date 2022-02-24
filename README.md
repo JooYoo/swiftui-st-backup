@@ -4,7 +4,7 @@
 
 ## Links
 
-- Tuturial: [[https://www.hackingwithswift.com/](https://www.hackingwithswift.com/)](hackingwithswift)
+- Tuturial: [https://www.hackingwithswift.com/](hackingwithswift)
 
 ## Features
 
