@@ -97,6 +97,8 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/pokedex">👨🏻‍💻 Pokédex</a>
+      <br>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/pokedex-realm">👨🏻‍💻 Pokédex Realm</a>
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/jsonplaceholder">👨🏻‍💻 Infinite Scroll</a>
