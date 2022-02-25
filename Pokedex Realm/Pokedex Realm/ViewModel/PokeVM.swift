@@ -7,27 +7,19 @@
 
 import Foundation
 
-class PokeUrlVM: ObservableObject {
+class PokeVM: ObservableObject {
     
     @Published var pokemons = [Pokemon]()
-    
     var orderedPokemons:[Pokemon]  {
         return pokemons.sorted(by: {$0.id<$1.id})
     }
     
     
     init(){
-        getPokeUrls { pokemonUrls in
-            
-            pokemonUrls.forEach { pokeUrl in
-                self.getPokemon(url: pokeUrl.url) { apiPokemon in
-                    self.pokemons.append(apiPokemon)
-                }
-            }
-            
-        }
+        fetchApiData()
     }
     
+    // MARK: - Networking
     func getPokeUrls(completed: @escaping (_ pokemonUrls: [PokemonUrl])->Void) {
         // 1. endpoint Url
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151") else{
@@ -81,5 +73,15 @@ class PokeUrlVM: ObservableObject {
         
         // 4. run task
         task.resume()
+    }
+    
+    func fetchApiData(){
+        getPokeUrls { pokemonUrls in
+            pokemonUrls.forEach { pokeUrl in
+                self.getPokemon(url: pokeUrl.url) { apiPokemon in
+                    self.pokemons.append(apiPokemon)
+                }
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = PokeUrlVM()
+    @StateObject var vm = PokeVM()
     
     var body: some View {
         NavigationView{
