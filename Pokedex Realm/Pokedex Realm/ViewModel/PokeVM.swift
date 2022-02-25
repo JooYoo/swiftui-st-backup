@@ -6,17 +6,21 @@
 //
 
 import Foundation
+import RealmSwift
 
 class PokeVM: ObservableObject {
+    // realm
+    private(set) var localRealm: Realm?
     
+    // objs => UI
     @Published var pokemons = [Pokemon]()
     var orderedPokemons:[Pokemon]  {
         return pokemons.sorted(by: {$0.id<$1.id})
     }
     
-    
     init(){
-        fetchApiData()
+        startRealm()
+        dataManager()
     }
     
     // MARK: - Networking
@@ -79,8 +83,66 @@ class PokeVM: ObservableObject {
         getPokeUrls { pokemonUrls in
             pokemonUrls.forEach { pokeUrl in
                 self.getPokemon(url: pokeUrl.url) { apiPokemon in
+                    // obj => DB
+                    self.saveData(apiPokemon)
+                    // obj => UI
                     self.pokemons.append(apiPokemon)
                 }
+            }
+        }
+    }
+    
+    // MARK: - Realm
+    // open Realm
+    func startRealm(){
+        do {
+            Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1)
+            localRealm = try Realm()
+        } catch {
+            print("🐞 open Realm failed:", error)
+        }
+    }
+    
+    // save Data
+    func saveData(_ pokemon: Pokemon){
+        // check Realm
+        guard let localRealm = localRealm else {
+            assertionFailure("🐞 use Realm failed when saveData")
+            return
+        }
+        // obj => DB
+        do {
+            try localRealm.write({
+                localRealm.add(pokemon, update: .modified)
+            })
+        } catch {
+            print("🐞 save data failed:", error)
+        }
+    }
+    
+    // load Data
+    func loadData(completed: @escaping (_ dbPokemons: Results<Pokemon>)->Void){
+        // check Realm
+        guard let localRealm = localRealm else {
+            assertionFailure("🐞 use Realm failed when saveData")
+            return
+        }
+        // DB => Results<Pokemon>
+        let dbPokemons = localRealm.objects(Pokemon.self)
+        
+        completed(dbPokemons)
+        
+        
+    }
+    
+    // MARK: - help funcs
+    func dataManager(){
+        loadData { dbPokemons in
+            if dbPokemons.isEmpty {
+                self.fetchApiData()
+            }else{
+                // Results<Pokemon> => objs
+                dbPokemons.forEach({self.pokemons.append($0)})
             }
         }
     }

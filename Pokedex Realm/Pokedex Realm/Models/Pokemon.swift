@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Pokemon: Codable {
-    var id: Int = 0
-    var name: String = ""
-    var height: Int = 0
-    var weight: Int = 0
-    var sprites: PokeSprites = PokeSprites()
+class Pokemon: Object, Codable {
+    @Persisted (primaryKey: true) var id: Int
+    @Persisted var name: String
+    @Persisted var height: Int
+    @Persisted var weight: Int
+    @Persisted var sprites: PokeSprites?
 }
 
-struct PokeSprites: Codable {
-    var front_default: String = ""
+class PokeSprites: Object, Codable {
+    @Persisted var front_default: String
 }

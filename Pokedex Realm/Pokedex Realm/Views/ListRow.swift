@@ -16,7 +16,7 @@ struct ListRow: View {
         } label: {
             HStack{
                 // list-row-Image
-                AsyncImage(url: URL(string: pokemon.sprites.front_default)){ phase in
+                AsyncImage(url: URL(string: pokemon.sprites!.front_default)){ phase in
                     if let image = phase.image {
                         image
                             .resizable()
