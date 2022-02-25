@@ -141,6 +141,7 @@ class PokeVM: ObservableObject {
             if dbPokemons.isEmpty {
                 self.fetchApiData()
             }else{
+                // FIXME: pull to refresh duplicate entries
                 // Results<Pokemon> => objs
                 dbPokemons.forEach({self.pokemons.append($0)})
             }

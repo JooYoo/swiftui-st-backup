@@ -6,28 +6,26 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ListRow: View {
     let pokemon: Pokemon
     
     var body: some View {
         NavigationLink{
-            Text(pokemon.name)
+            DetailView(pokemon: pokemon)
         } label: {
             HStack{
                 // list-row-Image
-                AsyncImage(url: URL(string: pokemon.sprites!.front_default)){ phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } else if phase.error != nil{
+                KFImage(URL(string: pokemon.sprites!.front_default))
+                    .placeholder({
                         Text("🐈")
-                    }else{
-                        ProgressView()
-                    }
-                }
-                .frame(width: 100, height: 100)
+                            .font(.system(size: 50))
+                    })
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                
                 
                 // list-row-txt
                 HStack{
@@ -47,7 +45,7 @@ struct ListRow: View {
                 }
             }
         }
-       
+        
     }
 }
 

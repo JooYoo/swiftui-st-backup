@@ -18,7 +18,11 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("PokeDex")
+            .refreshable {
+                vm.dataManager()
+            }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

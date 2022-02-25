@@ -17,6 +17,8 @@
 		9A64F2B927C7EEDB00335E50 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F2B827C7EEDB00335E50 /* ListRow.swift */; };
 		9A64F2BD27C93AB400335E50 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9A64F2BC27C93AB400335E50 /* Realm */; };
 		9A64F2BF27C93AB400335E50 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9A64F2BE27C93AB400335E50 /* RealmSwift */; };
+		9A64F2C227C9596100335E50 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9A64F2C127C9596100335E50 /* Kingfisher */; };
+		9A64F2C427C95B2300335E50 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F2C327C95B2300335E50 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 		9A64F2B027C7EE3500335E50 /* PokeUrlStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeUrlStore.swift; sourceTree = "<group>"; };
 		9A64F2B527C7EE9400335E50 /* PokeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeVM.swift; sourceTree = "<group>"; };
 		9A64F2B827C7EEDB00335E50 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
+		9A64F2C327C95B2300335E50 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A64F2C227C9596100335E50 /* Kingfisher in Frameworks */,
 				9A64F2BF27C93AB400335E50 /* RealmSwift in Frameworks */,
 				9A64F2BD27C93AB400335E50 /* Realm in Frameworks */,
 			);
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9A64F2A227C7ED5800335E50 /* ContentView.swift */,
+				9A64F2C327C95B2300335E50 /* DetailView.swift */,
 				9A64F2B827C7EEDB00335E50 /* ListRow.swift */,
 			);
 			path = Views;
@@ -126,6 +131,7 @@
 			packageProductDependencies = (
 				9A64F2BC27C93AB400335E50 /* Realm */,
 				9A64F2BE27C93AB400335E50 /* RealmSwift */,
+				9A64F2C127C9596100335E50 /* Kingfisher */,
 			);
 			productName = "Pokedex Realm";
 			productReference = 9A64F29D27C7ED5800335E50 /* Pokedex Realm.app */;
@@ -157,6 +163,7 @@
 			mainGroup = 9A64F29427C7ED5800335E50;
 			packageReferences = (
 				9A64F2BB27C93AB400335E50 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				9A64F2C027C9596100335E50 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 9A64F29E27C7ED5800335E50 /* Products */;
 			projectDirPath = "";
@@ -187,6 +194,7 @@
 				9A64F2B627C7EE9400335E50 /* PokeVM.swift in Sources */,
 				9A64F2B127C7EE3500335E50 /* PokeUrlStore.swift in Sources */,
 				9A64F2A327C7ED5800335E50 /* ContentView.swift in Sources */,
+				9A64F2C427C95B2300335E50 /* DetailView.swift in Sources */,
 				9A64F2A127C7ED5800335E50 /* Pokedex_RealmApp.swift in Sources */,
 				9A64F2B927C7EEDB00335E50 /* ListRow.swift in Sources */,
 				9A64F2AF27C7EE0E00335E50 /* Pokemon.swift in Sources */,
@@ -402,6 +410,14 @@
 				minimumVersion = 10.10.0;
 			};
 		};
+		9A64F2C027C9596100335E50 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -414,6 +430,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9A64F2BB27C93AB400335E50 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		9A64F2C127C9596100335E50 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9A64F2C027C9596100335E50 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
