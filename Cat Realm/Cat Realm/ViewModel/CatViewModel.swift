@@ -47,8 +47,7 @@ class CatVM: ObservableObject {
         task.resume()
     }
     
-    // MARK: - Persistent Data
-    // init Realm
+    // MARK: - Realm
     func startRealm(){
         do {
             Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 1)
@@ -58,18 +57,18 @@ class CatVM: ObservableObject {
         }
     }
     
-    // retrieve items
-    func getBreeds(){
-        fetchData(completion: { breeds in
-            // API data => UI
-            self.breeds = breeds
-            // API data => DB
-            breeds.forEach { self.saveBreed($0) }
-        })
+    func loadData(completed: @escaping (_ dbCats:Results<Breed>)->Void){
+        guard let localRealm = localRealm else {
+            return
+        }
+        
+        let dbCats = localRealm.objects(Breed.self)
+        
+        completed(dbCats)
     }
     
     // save item
-    func saveBreed(_ breed: Breed){
+    func saveData(_ breed: Breed){
         guard let localRealm = localRealm else {
             assertionFailure("Databaase is not initialized")
             return
@@ -77,11 +76,29 @@ class CatVM: ObservableObject {
         
         do {
             // change data in db
+            // TODO: save objs is possible
             try localRealm.write({
                 localRealm.add(breed, update: .modified)
             })
         } catch {
             print("🐞 add Todo error:", error)
+        }
+    }
+    
+    // MARK: - help funcs
+    // retrieve items: either from DB or API
+    func getBreeds(){
+        loadData { dbCats in
+            if dbCats.isEmpty {
+                self.fetchData(completion: { apiBreeds in
+                    // API data => DB
+                    apiBreeds.forEach { self.saveData($0) }
+                    // API data => UI
+                    self.breeds = apiBreeds
+                })
+            }else{
+                dbCats.forEach({self.breeds.append($0)})
+            }
         }
     }
 }

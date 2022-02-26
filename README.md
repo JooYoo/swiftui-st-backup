@@ -1,26 +1,24 @@
 # Cat Realm
 
-## Goal
-
-- Fetch data from API.
-- Save the detched data in local for no internet usage.
+<kbd><img src="https://user-images.githubusercontent.com/12739843/153708224-2e8a4a14-1a85-403b-9f4a-2ed47447e17f.gif" width="200px" alt="Cat"/></kbd>
 
 ## Links
 
+- API: https://api.thecatapi.com/v1/breeds
 - [Cat](https://github.com/JooYoo/swiftui-st-backup/tree/cat)
-- [Cat Refactor](https://github.com/JooYoo/swiftui-st-backup/tree/cat-refactor)
+- [Cat Realm](https://github.com/JooYoo/swiftui-st-backup/tree/cat-realm)
 
 ## Feature
 
-- Basic Networking: fetch Data from API, list data in UI
-- Save Fetched Data via **Realm** (except images)
-- Save new data to DB if necessary
+- Browse cats
+- offline available
 
 ## Topics
 
 - Networking
-- Realm
+- Persistent Data via Realm
 - Completion Handler
+- Cache Image via KingFisher
 
 ## Views
 

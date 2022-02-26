@@ -48,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A64F2C727CA40C600335E50 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A90529B27C10E4E003A4E2A /* CatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A64F2C827CA40CD00335E50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A90529927C10E3F003A4E2A /* CatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9A90527F27C10E1F003A4E2A = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				9A90528B27C10E1F003A4E2A /* Cat_RealmApp.swift */,
-				9A90529927C10E3F003A4E2A /* CatModel.swift */,
-				9A90529B27C10E4E003A4E2A /* CatViewModel.swift */,
+				9A64F2C827CA40CD00335E50 /* Model */,
+				9A64F2C727CA40C600335E50 /* ViewModel */,
 				9A90528F27C10E21003A4E2A /* Assets.xcassets */,
 				9A9052A327C10EDD003A4E2A /* Views */,
 				9A90529127C10E21003A4E2A /* Preview Content */,
