@@ -20,13 +20,14 @@ class PokeVM: ObservableObject {
     
     init(){
         startRealm()
-        dataManager()
+        loadPokemons()
     }
     
     // MARK: - Networking
     func getPokeUrls(completed: @escaping (_ pokemonUrls: [PokemonUrl])->Void) {
         // 1. endpoint Url
         guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151") else{
+            print("🐞 getPokeUrls failed")
             return
         }
         
@@ -81,6 +82,9 @@ class PokeVM: ObservableObject {
     
     func fetchApiData(){
         getPokeUrls { pokemonUrls in
+            // pull to refresh
+            self.pokemons = []
+            // get pokemons via its url
             pokemonUrls.forEach { pokeUrl in
                 self.getPokemon(url: pokeUrl.url) { apiPokemon in
                     // obj => DB
@@ -131,17 +135,14 @@ class PokeVM: ObservableObject {
         let dbPokemons = localRealm.objects(Pokemon.self)
         
         completed(dbPokemons)
-        
-        
     }
     
     // MARK: - help funcs
-    func dataManager(){
+    func loadPokemons(){
         loadData { dbPokemons in
             if dbPokemons.isEmpty {
                 self.fetchApiData()
             }else{
-                // FIXME: pull to refresh duplicate entries
                 // Results<Pokemon> => objs
                 dbPokemons.forEach({self.pokemons.append($0)})
             }

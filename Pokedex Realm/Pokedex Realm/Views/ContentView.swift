@@ -19,7 +19,7 @@ struct ContentView: View {
             }
             .navigationTitle("PokeDex")
             .refreshable {
-                vm.dataManager()
+                vm.fetchApiData()
             }
         }
         .navigationViewStyle(.stack)
