@@ -4,6 +4,7 @@
 
 ## Links
 
+- API: https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151
 - [Pokedex](https://github.com/JooYoo/swiftui-st-backup/tree/pokedex)
 - [Pokedex Realm](https://github.com/JooYoo/swiftui-st-backup/tree/pokedex-realm)
 
