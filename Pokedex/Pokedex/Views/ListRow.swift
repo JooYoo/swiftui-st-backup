@@ -14,7 +14,7 @@ struct ListRow: View {
     
     var body: some View {
         NavigationLink{
-            Text(vm.pokemon.name)
+            DetailView(pokemon: vm.pokemon)
         } label: {
             HStack{
                 // list-row-Image

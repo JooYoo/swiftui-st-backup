@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A64F2C627CA3C7000335E50 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64F2C527CA3C7000335E50 /* DetailView.swift */; };
 		9A90523327BD7747003A4E2A /* PokedexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90523227BD7747003A4E2A /* PokedexApp.swift */; };
 		9A90523527BD7747003A4E2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A90523427BD7747003A4E2A /* ContentView.swift */; };
 		9A90523727BD774B003A4E2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A90523627BD774B003A4E2A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A64F2C527CA3C7000335E50 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9A90522F27BD7747003A4E2A /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A90523227BD7747003A4E2A /* PokedexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexApp.swift; sourceTree = "<group>"; };
 		9A90523427BD7747003A4E2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				9A90523427BD7747003A4E2A /* ContentView.swift */,
 				9A90524727BEB5E9003A4E2A /* ListRow.swift */,
+				9A64F2C527CA3C7000335E50 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A90524627BEA428003A4E2A /* Pokemon.swift in Sources */,
+				9A64F2C627CA3C7000335E50 /* DetailView.swift in Sources */,
 				9A90523527BD7747003A4E2A /* ContentView.swift in Sources */,
 				9A90524827BEB5E9003A4E2A /* ListRow.swift in Sources */,
 				9A90524327BD7948003A4E2A /* PokeUrlVM.swift in Sources */,
