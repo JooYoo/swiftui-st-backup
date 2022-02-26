@@ -1,15 +1,30 @@
-# swiftui-st-backup
+# BetterRest
 
-1. [WeSplit](https://github.com/JooYoo/swiftui-st-backup/tree/we-split)
-<kbd>
-  <img src="https://user-images.githubusercontent.com/12739843/151405104-c3ea73c9-4eac-4d0d-ae5b-d0ecc91d34ce.gif" width="200px"/>
-</kbd>
+<kbd><img src="https://user-images.githubusercontent.com/12739843/151595173-5b357e4b-84f8-40f2-a665-c4bd5e8cbbd9.gif" width="200px" alt="BetterRest"/></kbd>
 
-2. [UnitConverter](https://github.com/JooYoo/swiftui-st-backup/tree/unit-converter)
+## Links
 
-3. [GuessFlag](https://github.com/JooYoo/swiftui-st-backup/tree/guess-flag)
-<kbd>
-  <img src="https://user-images.githubusercontent.com/12739843/151205931-6a85e8ee-6f26-421d-b71c-2b6fe46c978a.gif" width="200px"/>
-</kbd>
+- Tutorial: [https://www.hackingwithswift.com](https://www.hackingwithswift.com/)
 
+## Features
 
+- Based on a Machine Learning Model, input _wake-up-time_, _desired-amount-of-sleep_, _daily-coffee-amout_ to predict _bed-time_
+
+## Topics
+
+- CoreML, CreateML
+- SingleView app
+
+## Views
+
+- `NavigationView`
+- `Form`, `Section`
+- `DatePicker`
+- `Stepper`
+- `Picker`
+- `alert`
+
+## Keywords
+
+- `MLModelConfiguration`, `.prediction`
+- `@State`
