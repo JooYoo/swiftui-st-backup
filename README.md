@@ -92,8 +92,6 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat">👨🏻‍💻 Cat</a>
-      <br>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat-realm">👨🏻‍💻 Cat Realm</a>
     </th>
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/pokedex">👨🏻‍💻 Pokédex</a>
@@ -152,10 +150,16 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/pokedex-realm">👨🏻‍💻 Pokédex Realm</a>
     </th>
+    <th>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat-realm">👨🏻‍💻 Cat Realm</a>
+    </th>
   </tr>
   <tr>
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/154542578-644fd796-82fe-4b40-b42b-cb776778aa5c.gif" width="200px" alt="Pokedex"/></kbd>
-    </td> 
+    </td>
+    <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/153708224-2e8a4a14-1a85-403b-9f4a-2ed47447e17f.gif" width="200px" alt="Cat"/></kbd>
+    </td>
   </tr>
 </table>
