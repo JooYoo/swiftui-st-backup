@@ -4,8 +4,8 @@ My iOS Dev · **SwiftUI** learning playground. I’m trying to cover the essenti
 Each of the mini-apps has its own branch. Clicking the app title go to the corresponding branch. I summarized the app development detail in the branch README. If I followed a tutorial to implement the app. I will write the resource in the branch README, otherwise, 👨🏻‍💻 can be found in the front of the mini-app title. It means I built it by myself.
 
 ## Todos
-- [ ] build more apps
-- [ ] complete the READMEs of the previous projects
+- [x] complete the READMEs of the previous projects
+- [ ] SwiftUI x Animation
 - [ ] to be a Junior iOS Developer
 
 ## Single View
@@ -161,5 +161,19 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/153708224-2e8a4a14-1a85-403b-9f4a-2ed47447e17f.gif" width="200px" alt="Cat"/></kbd>
     </td>
+  </tr>
+</table>
+
+## Made with ❤️ by SwiftUI
+<table>
+  <tr>
+    <th>
+     <a href="https://github.com/JooYoo/Swift-ninone">👨🏻‍💻 NINONE</a>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/156888687-bdeeda50-a5b7-431b-89fe-089341efb089.gif" width="200px" alt="Weather"/></kbd>
+    </td> 
   </tr>
 </table>
