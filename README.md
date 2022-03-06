@@ -5,8 +5,11 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
 
 ## Todos
 - [x] complete the READMEs of the previous projects
-- [ ] SwiftUI x Animation
 - [ ] to be a Junior iOS Developer
+- [ ] SwiftUI x Animation
+- [ ] SwiftUI x RealityKit
+- [ ] SwiftUI x CoreML
+- [ ] SwiftUI x MapKit
 
 ## Single View
 
