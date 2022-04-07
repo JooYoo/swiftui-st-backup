@@ -11,39 +11,25 @@ class SongVM: ObservableObject {
     
     
     init(){
-        print("test")
-        fetchSearchResults()
+        
+        Task {
+            await getSongs()
+        }
     }
     
-    func fetchSearchResults(){
-        // url
-        guard let url = URL(string: "https://itunes.apple.com/search?term=jack+johnson") else{
-            print("🐞 url error")
-            return
+    var repo = SongRepository()
+    
+    func getSongs() async {
+        
+        do {
+            let songs = try await repo.getSongs("Jack Jonson")
+            print(songs)
+        } catch {
+            print("🐞 fetch songs error")
         }
-        
-        // task
-        URLSession.shared.dataTask(with: url) { data, res, err in
-            
-            // safe data
-            guard let safeData = data, err == nil else{
-                print("🐞 safe data error")
-                return
-            }
-            
-            // decode
-            guard let decoded = try? JSONDecoder().decode(Search.self, from: safeData) else {
-                print("🐞 decode error")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                print(decoded.results)
-            }
-            
-        }.resume()
-        
-        
     }
+    
+    
+    
     
 }
