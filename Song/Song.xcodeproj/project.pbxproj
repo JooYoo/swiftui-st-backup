@@ -15,6 +15,7 @@
 		9AA3B01527FF4D8100FB0F25 /* SongVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3B01427FF4D8100FB0F25 /* SongVM.swift */; };
 		9AA3B01927FF540A00FB0F25 /* RemoteSongDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3B01827FF540A00FB0F25 /* RemoteSongDataSource.swift */; };
 		9AA3B01C27FF583C00FB0F25 /* SongRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3B01B27FF583C00FB0F25 /* SongRepository.swift */; };
+		9AA3B01F2800844D00FB0F25 /* UrlExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA3B01E2800844D00FB0F25 /* UrlExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9AA3B01427FF4D8100FB0F25 /* SongVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongVM.swift; sourceTree = "<group>"; };
 		9AA3B01827FF540A00FB0F25 /* RemoteSongDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSongDataSource.swift; sourceTree = "<group>"; };
 		9AA3B01B27FF583C00FB0F25 /* SongRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepository.swift; sourceTree = "<group>"; };
+		9AA3B01E2800844D00FB0F25 /* UrlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				9A8FB7E227F0C194003EA35F /* SongApp.swift */,
+				9AA3B0202800845400FB0F25 /* Extensions */,
 				9AA3B01D27FF584500FB0F25 /* Repository */,
 				9AA3B01A27FF541200FB0F25 /* RemoteDataSource */,
 				9AA3B01327FF3F7C00FB0F25 /* Model */,
@@ -117,6 +120,14 @@
 				9AA3B01B27FF583C00FB0F25 /* SongRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		9AA3B0202800845400FB0F25 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9AA3B01E2800844D00FB0F25 /* UrlExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA3B01F2800844D00FB0F25 /* UrlExt.swift in Sources */,
 				9AA3B01227FF3F7600FB0F25 /* Search.swift in Sources */,
 				9AA3B01527FF4D8100FB0F25 /* SongVM.swift in Sources */,
 				9AA3B01C27FF583C00FB0F25 /* SongRepository.swift in Sources */,

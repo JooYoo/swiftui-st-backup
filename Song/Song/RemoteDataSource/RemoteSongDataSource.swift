@@ -19,7 +19,7 @@ class RemoteSongDataSource {
     
     func fetchSongs(_ artistName: String)async throws -> [Song]{
         
-        guard let url = URL(string: "https://itunes.apple.com/search?term=jack+johnson") else{
+        guard let url = URL.songUrl(artistName) else{
             throw APIError.badUrl
         }
         

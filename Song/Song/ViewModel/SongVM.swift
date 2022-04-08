@@ -22,7 +22,8 @@ class SongVM: ObservableObject {
     func getSongs() async {
         
         do {
-            let songs = try await repo.getSongs("Jack Jonson")
+            // TODO: how to input artistName as param
+            let songs = try await repo.getSongs("jack jonson")
             print(songs)
         } catch {
             print("🐞 fetch songs error")
