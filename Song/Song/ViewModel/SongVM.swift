@@ -8,26 +8,28 @@
 import Foundation
 
 class SongVM: ObservableObject {
-    
+    // app-data
+    var repo = SongRepository()
+    // ui-data
+    @Published var songs = [Song]()
+    @Published var inputVal = ""
     
     init(){
-        
-        Task {
-            await getSongs()
-        }
+        getSongs()
     }
     
-    var repo = SongRepository()
-    
-    func getSongs() async {
+    func getSongs() {
         
-        do {
-            // TODO: how to input artistName as param
-            let songs = try await repo.getSongs("jack jonson")
-            print(songs)
-        } catch {
-            print("🐞 fetch songs error")
+        Task{
+            do {
+                // TODO: how to input artistName as param
+                songs = try await repo.getSongs("jack jonson")
+                print(songs)
+            } catch {
+                print("🐞 fetch songs error")
+            }
         }
+        
     }
     
     

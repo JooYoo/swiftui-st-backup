@@ -12,8 +12,22 @@ struct ContentView: View {
     
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List{
+                
+                Section{
+                    TextField("artist name", text: $vm.inputVal)
+                }
+                
+                Section {
+                    ForEach(vm.songs, id:\.self) { song in
+                        Text(song.trackName)
+                    }
+                }
+                
+            }
+            .navigationTitle("Songs")
+        }
     }
 }
 
