@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    ForEach(vm.songs, id:\.self) { song in
+                    ForEach(vm.songs, id:\.id) { song in
                         Text(song.trackName)
                     }
                 }
