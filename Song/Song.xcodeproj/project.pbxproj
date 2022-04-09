@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A3838EC2801F383006A3A60 /* SongImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3838EB2801F383006A3A60 /* SongImg.swift */; };
 		9A8FB7E327F0C194003EA35F /* SongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB7E227F0C194003EA35F /* SongApp.swift */; };
 		9A8FB7E527F0C194003EA35F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB7E427F0C194003EA35F /* ContentView.swift */; };
 		9A8FB7E727F0C199003EA35F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8FB7E627F0C199003EA35F /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A3838EB2801F383006A3A60 /* SongImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongImg.swift; sourceTree = "<group>"; };
 		9A8FB7DF27F0C194003EA35F /* Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Song.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8FB7E227F0C194003EA35F /* SongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongApp.swift; sourceTree = "<group>"; };
 		9A8FB7E427F0C194003EA35F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		9AA3B01727FF4F6900FB0F25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A3838EB2801F383006A3A60 /* SongImg.swift */,
 				9A8FB7E427F0C194003EA35F /* ContentView.swift */,
 			);
 			path = View;
@@ -204,6 +207,7 @@
 				9AA3B01227FF3F7600FB0F25 /* Search.swift in Sources */,
 				9AA3B01527FF4D8100FB0F25 /* SongVM.swift in Sources */,
 				9AA3B01C27FF583C00FB0F25 /* SongRepository.swift in Sources */,
+				9A3838EC2801F383006A3A60 /* SongImg.swift in Sources */,
 				9A8FB7E527F0C194003EA35F /* ContentView.swift in Sources */,
 				9AA3B01927FF540A00FB0F25 /* RemoteSongDataSource.swift in Sources */,
 				9A8FB7E327F0C194003EA35F /* SongApp.swift in Sources */,

@@ -21,7 +21,15 @@ struct ContentView: View {
                 
                 Section {
                     ForEach(vm.songs, id:\.id) { song in
-                        Text(song.trackName)
+                        HStack{
+                            SongImg(urlStr: song.artworkUrl100, size: 60)
+                            
+                            VStack(alignment: .leading) {
+                                Text(song.trackName)
+                                    .font(.title3.bold())
+                                Text(song.artistName)
+                            }
+                        }
                     }
                 }
                 
