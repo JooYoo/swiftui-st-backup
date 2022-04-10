@@ -14,28 +14,19 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List{
-                
                 Section{
                     TextField("artist name", text: $vm.inputVal)
                 }
                 
                 Section {
                     ForEach(vm.songs, id:\.id) { song in
-                        HStack{
-                            SongImg(urlStr: song.artworkUrl100, size: 60)
-                            
-                            VStack(alignment: .leading) {
-                                Text(song.trackName)
-                                    .font(.title3.bold())
-                                Text(song.artistName)
-                            }
-                        }
+                        ListRow(song: song)
                     }
                 }
-                
             }
             .navigationTitle("Songs")
         }
+        .navigationViewStyle(.stack)
     }
 }
 
