@@ -12,7 +12,7 @@ struct ListRow: View {
     
     var body: some View {
         NavigationLink{
-            SongDetail(song: song)
+            SongDetailView(song: song)
         } label: {
             HStack{
                 SongImg(urlStr: song.artworkUrl100, size: 60)

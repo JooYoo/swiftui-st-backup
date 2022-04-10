@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A3838EC2801F383006A3A60 /* SongImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3838EB2801F383006A3A60 /* SongImg.swift */; };
 		9A3838F128034623006A3A60 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3838F028034623006A3A60 /* ListRow.swift */; };
-		9A3838F32803488F006A3A60 /* SongDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3838F22803488F006A3A60 /* SongDetail.swift */; };
+		9A3838F32803488F006A3A60 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3838F22803488F006A3A60 /* SongDetailView.swift */; };
+		9A3838F528034E3F006A3A60 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3838F428034E3F006A3A60 /* StringExt.swift */; };
 		9A8FB7E327F0C194003EA35F /* SongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB7E227F0C194003EA35F /* SongApp.swift */; };
 		9A8FB7E527F0C194003EA35F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB7E427F0C194003EA35F /* ContentView.swift */; };
 		9A8FB7E727F0C199003EA35F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8FB7E627F0C199003EA35F /* Assets.xcassets */; };
@@ -24,7 +25,8 @@
 /* Begin PBXFileReference section */
 		9A3838EB2801F383006A3A60 /* SongImg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongImg.swift; sourceTree = "<group>"; };
 		9A3838F028034623006A3A60 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
-		9A3838F22803488F006A3A60 /* SongDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetail.swift; sourceTree = "<group>"; };
+		9A3838F22803488F006A3A60 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		9A3838F428034E3F006A3A60 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		9A8FB7DF27F0C194003EA35F /* Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Song.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8FB7E227F0C194003EA35F /* SongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongApp.swift; sourceTree = "<group>"; };
 		9A8FB7E427F0C194003EA35F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,7 +55,6 @@
 			children = (
 				9A3838EB2801F383006A3A60 /* SongImg.swift */,
 				9A3838F028034623006A3A60 /* ListRow.swift */,
-				9A3838F22803488F006A3A60 /* SongDetail.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -119,6 +120,7 @@
 			children = (
 				9A3838ED280345FA006A3A60 /* Components */,
 				9A8FB7E427F0C194003EA35F /* ContentView.swift */,
+				9A3838F22803488F006A3A60 /* SongDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA3B01E2800844D00FB0F25 /* UrlExt.swift */,
+				9A3838F428034E3F006A3A60 /* StringExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,11 +221,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA3B01F2800844D00FB0F25 /* UrlExt.swift in Sources */,
+				9A3838F528034E3F006A3A60 /* StringExt.swift in Sources */,
 				9AA3B01227FF3F7600FB0F25 /* Search.swift in Sources */,
 				9AA3B01527FF4D8100FB0F25 /* SongVM.swift in Sources */,
 				9AA3B01C27FF583C00FB0F25 /* SongRepository.swift in Sources */,
 				9A3838EC2801F383006A3A60 /* SongImg.swift in Sources */,
-				9A3838F32803488F006A3A60 /* SongDetail.swift in Sources */,
+				9A3838F32803488F006A3A60 /* SongDetailView.swift in Sources */,
 				9A8FB7E527F0C194003EA35F /* ContentView.swift in Sources */,
 				9AA3B01927FF540A00FB0F25 /* RemoteSongDataSource.swift in Sources */,
 				9A8FB7E327F0C194003EA35F /* SongApp.swift in Sources */,

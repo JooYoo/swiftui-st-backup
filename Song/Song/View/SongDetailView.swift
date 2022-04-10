@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SongDetail: View {
+struct SongDetailView: View {
     var song:Song
     
     var body: some View {
         ScrollView{
-            SongImg(urlStr: song.artworkUrl100, size: 300)
+            SongImg(urlStr: String.get300ArtWork(song.artworkUrl100)!, size: 300)
                 .padding(.bottom, 10)
             
             Text(song.trackName)
@@ -38,6 +38,6 @@ struct SongDetail_Previews: PreviewProvider {
     static var previews: some View {
         let newSong = Song(artistName: "Nirvana", collectionName: "Nevermind", trackName: "Smells like teen spirit", previewUrl: "https://google.com", artworkUrl100: "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/db/d9/1a/dbd91afa-044d-637b-c557-847863c85a79/source/100x100bb.jpg", primaryGenreName: "Rock")
         
-        SongDetail(song: newSong)
+        SongDetailView(song: newSong)
     }
 }
