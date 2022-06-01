@@ -10,10 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var vm = SongVM()
     
-    
     var body: some View {
         NavigationView {
             List{
+                Section {
+                    Button {
+                        vm.playSound()
+                    } label: {
+                        Text("press me")
+                    }
+                }
                 Section{
                     TextField("artist name", text: $vm.inputVal)
                 }
@@ -22,7 +28,7 @@ struct ContentView: View {
                     ForEach(vm.songs, id:\.id) { song in
                         ListRow(song: song)
                     }
-                }
+                } 
             }
             .navigationTitle("Songs")
         }

@@ -37,6 +37,7 @@
 		9AA3B01827FF540A00FB0F25 /* RemoteSongDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteSongDataSource.swift; sourceTree = "<group>"; };
 		9AA3B01B27FF583C00FB0F25 /* SongRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongRepository.swift; sourceTree = "<group>"; };
 		9AA3B01E2800844D00FB0F25 /* UrlExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlExt.swift; sourceTree = "<group>"; };
+		9AE5748F2832A1EE00836FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 		9A8FB7E127F0C194003EA35F /* Song */ = {
 			isa = PBXGroup;
 			children = (
+				9AE5748F2832A1EE00836FDA /* Info.plist */,
 				9A8FB7E227F0C194003EA35F /* SongApp.swift */,
 				9AA3B0202800845400FB0F25 /* Extensions */,
 				9AA3B01D27FF584500FB0F25 /* Repository */,
@@ -362,6 +364,7 @@
 				DEVELOPMENT_TEAM = 48J67Q2762;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Song/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,6 +394,7 @@
 				DEVELOPMENT_TEAM = 48J67Q2762;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Song/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

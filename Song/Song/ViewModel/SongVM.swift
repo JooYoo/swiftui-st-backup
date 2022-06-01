@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class SongVM: ObservableObject {
     // app-data
@@ -19,7 +20,6 @@ class SongVM: ObservableObject {
     }
     
     func getSongs() {
-        
         Task{
             do {
                 // TODO: how to input artistName as param
@@ -29,10 +29,18 @@ class SongVM: ObservableObject {
                 print("🐞 fetch songs error")
             }
         }
-        
     }
     
     
     
+    var player = AVPlayer()
+    func playSound() {
+        let playerItem = AVPlayerItem(url: URL(string: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ce/48/5b/ce485b59-13b7-9859-0431-e602d6347479/mzaf_7168871676263777717.plus.aac.p.m4a")!)
+        
+        player = AVPlayer(playerItem: playerItem)
+        player.play()
+        
+        print("working")
+    }
     
 }
