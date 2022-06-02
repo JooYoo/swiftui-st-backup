@@ -13,13 +13,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List{
-                Section {
-                    Button {
-                        vm.playSound()
-                    } label: {
-                        Text("press me")
-                    }
-                }
                 Section{
                     TextField("artist name", text: $vm.inputVal)
                 }

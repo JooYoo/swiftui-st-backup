@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SongDetailView: View {
+    @StateObject var vm = SongDetailVM()
     var song:Song
     
     var body: some View {
@@ -27,17 +28,25 @@ struct SongDetailView: View {
             
             Text(song.collectionName ?? "nil")
                 .font(.title3)
-            Text("TODO: track preview")
+            
+            HStack{
+                Button("Play"){
+                    vm.playSound(song.previewUrl)
+                }
+                Button("Pause"){
+                    vm.stopSound()
+                }
+            }
             
         }
         .padding()
     }
 }
 
-struct SongDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        let newSong = Song(artistName: "Nirvana", collectionName: "Nevermind", trackName: "Smells like teen spirit", previewUrl: "https://google.com", artworkUrl100: "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/db/d9/1a/dbd91afa-044d-637b-c557-847863c85a79/source/100x100bb.jpg", primaryGenreName: "Rock")
-        
-        SongDetailView(song: newSong)
-    }
-}
+//struct SongDetail_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let newSong = Song(artistName: "Nirvana", collectionName: "Nevermind", trackName: "Smells like teen spirit", previewUrl: "https://google.com", artworkUrl100: "https://is4-ssl.mzstatic.com/image/thumb/Music125/v4/db/d9/1a/dbd91afa-044d-637b-c557-847863c85a79/source/100x100bb.jpg", primaryGenreName: "Rock")
+//        
+//        SongDetailView(song: newSong)
+//    }
+//}
