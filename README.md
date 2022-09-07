@@ -24,9 +24,6 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/guess-flag">GuessFlag</a>
     </th>
-    <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/rock-paper-scissors">👨🏻‍💻 RockPaperScissors</a>
-    </th>
   </tr>
   <tr>
     <td>
@@ -38,9 +35,6 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/151205931-6a85e8ee-6f26-421d-b71c-2b6fe46c978a.gif" width="200px" alt="GuessFlag"/></kbd>
     </td>
-    <td>
-      <kbd><img src="https://user-images.githubusercontent.com/12739843/151655287-2ec15571-0192-4514-b459-0d3f0cbc12f5.gif" width="200px"/></kbd>
-    </td>
   </tr>
   <tr>
      <th>
@@ -49,6 +43,9 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/word-scramble">WordScramble</a>
     </th>
+     <th>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/rock-paper-scissors">👨🏻‍💻 RockPaperScissors</a>
+    </th>
   </tr>
   <tr>
     <td>
@@ -56,6 +53,9 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     </td>
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/151662264-875f3145-3fd3-4eed-a53d-29ce69ecfcda.gif" width="200px" alt="WordScramble"/></kbd>
+    </td>
+    <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/151655287-2ec15571-0192-4514-b459-0d3f0cbc12f5.gif" width="200px"/></kbd>
     </td>
   </tr>
 </table>
