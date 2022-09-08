@@ -134,9 +134,6 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/todo">👨🏻‍💻 Todo</a>
     </th>
-    <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/tobuy">👨🏻‍💻 Tobuy</a>
-    </th>
   </tr>
   <tr>
     <td>
@@ -148,9 +145,6 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/153925173-b71e14d3-abca-4582-80d0-3c5f8d683b20.gif" width="200px" alt="Todo"/></kbd>      
     </td>
-    <td>
-      <kbd><img src="https://user-images.githubusercontent.com/12739843/154127717-ebcfcf64-823a-4676-9f4b-d79dac164b9c.gif" width="200px" alt="Tobuy"/></kbd>      
-    </td>
   </tr>
   <tr>
     <th>
@@ -159,6 +153,9 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/cat-realm">👨🏻‍💻 Cat Realm</a>
     </th>
+    <th>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/tobuy">👨🏻‍💻 Tobuy</a>
+    </th>
   </tr>
   <tr>
     <td>
@@ -166,6 +163,9 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     </td>
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/153708224-2e8a4a14-1a85-403b-9f4a-2ed47447e17f.gif" width="200px" alt="Cat"/></kbd>
+    </td>
+     <td>
+      <kbd><img src="https://user-images.githubusercontent.com/12739843/154127717-ebcfcf64-823a-4676-9f4b-d79dac164b9c.gif" width="200px" alt="Tobuy"/></kbd>      
     </td>
   </tr>
 </table>
