@@ -102,9 +102,6 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <th>
       <a href="https://github.com/JooYoo/swiftui-st-backup/tree/jsonplaceholder">👨🏻‍💻 Infinite Scroll</a>
     </th>
-    <th>
-      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/song">👨🏻‍💻 Song</a>
-    </th>
   </tr>
   <tr>
     <td>
@@ -119,6 +116,14 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
     <td>
       <kbd><img src="https://user-images.githubusercontent.com/12739843/155391195-7d501039-495b-4207-bcb4-2b7f902dd3b1.gif" width="200px" alt="JSONPlaceholder"/></kbd>      
     </td>
+  </tr>
+  <tr>
+    <th>
+      <a href="https://github.com/JooYoo/swiftui-st-backup/tree/song">👨🏻‍💻 Song</a>
+    </th>
+  </tr>
+  <tr>
+    <td><kbd>🍃</kbd></td>
   </tr>
 </table>
 
