@@ -18,6 +18,7 @@ class Webservice {
         let publisher = URLSession
             .shared
             .dataTaskPublisher(for: url)
+            .receive(on: RunLoop.main)
             .map(\.data)
             .decode(type: [Int].self, decoder: JSONDecoder())
             .eraseToAnyPublisher()

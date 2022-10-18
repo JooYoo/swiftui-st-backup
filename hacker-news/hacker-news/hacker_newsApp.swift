@@ -11,7 +11,7 @@ import SwiftUI
 struct hacker_newsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StoryListView()
         }
     }
 }
