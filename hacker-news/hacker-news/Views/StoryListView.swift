@@ -14,7 +14,13 @@ struct StoryListView: View {
         
         NavigationView {
             List(self.vm.stories, id: \.id) { story in
-                Text("\(story.id)")
+                
+                NavigationLink {
+                    StoryDetailView(story.id)
+                } label: {
+                    Text("\(story.id)")
+                }
+
             }
             .navigationBarTitle("Hack News")
         }

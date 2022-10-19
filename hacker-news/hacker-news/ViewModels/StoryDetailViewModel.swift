@@ -17,6 +17,7 @@ class StoryDetailViewModel: ObservableObject {
         self.storyId = storyId
         self.cancellable = Webservice()
             .getStoryBy(storyId: self.storyId)
+            .catch{_ in Just(Story.placeholder())}
             .sink(receiveCompletion: {_ in }, receiveValue: { story in
                 self.story = story
             })
