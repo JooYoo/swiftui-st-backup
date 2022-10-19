@@ -18,7 +18,7 @@ struct StoryListView: View {
                 NavigationLink {
                     StoryDetailView(story.id)
                 } label: {
-                    Text("\(story.id)")
+                    Text("\(story.title)")
                 }
 
             }
