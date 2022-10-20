@@ -130,7 +130,9 @@ Each of the mini-apps has its own branch. Clicking the app title go to the corre
       <kbd>🍃</kbd>
     </td>
     <td>
-      <kbd>🍃</kbd>
+      <kbd>
+        <img src="https://user-images.githubusercontent.com/12739843/196893783-1f0fb6ee-2fe4-45cd-8247-30e37c840a88.gif" width="200px" alt="CombineHacherNews"/>
+      </kbd>
     </td>
   </tr>
  
