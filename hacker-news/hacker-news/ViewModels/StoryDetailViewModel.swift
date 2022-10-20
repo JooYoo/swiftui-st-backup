@@ -9,14 +9,12 @@ import Foundation
 import Combine
 
 class StoryDetailViewModel: ObservableObject {
-    @Published var story: Story!
+    @Published var story: Story! = Story.placeholder()
     private var cancellable: AnyCancellable?
-    var storyId: Int
     
-    init(storyId: Int) {
-        self.storyId = storyId
-        self.cancellable = Webservice()
-            .getStoryBy(storyId: self.storyId)
+    func fetchStoryDetailsBy(_ id: Int) {
+        cancellable = Webservice()
+            .getStoryBy(storyId: id)
             .catch{_ in Just(Story.placeholder())}
             .sink(receiveCompletion: {_ in }, receiveValue: { story in
                 self.story = story
