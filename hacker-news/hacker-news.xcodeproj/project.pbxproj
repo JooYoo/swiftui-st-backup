@@ -17,6 +17,8 @@
 		9A4D520428FEF10A00260DA8 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D520328FEF10A00260DA8 /* Story.swift */; };
 		9A4D520628FFB04A00260DA8 /* StoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D520528FFB04A00260DA8 /* StoryDetailViewModel.swift */; };
 		9A4D5208290028CD00260DA8 /* StoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D5207290028CD00260DA8 /* StoryDetailView.swift */; };
+		9A4D520A2900F41600260DA8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D52092900F41600260DA8 /* WebView.swift */; };
+		9A4D520D2900F91B00260DA8 /* WKWebView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D520C2900F91B00260DA8 /* WKWebView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		9A4D520328FEF10A00260DA8 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		9A4D520528FFB04A00260DA8 /* StoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewModel.swift; sourceTree = "<group>"; };
 		9A4D5207290028CD00260DA8 /* StoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailView.swift; sourceTree = "<group>"; };
+		9A4D52092900F41600260DA8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9A4D520C2900F91B00260DA8 /* WKWebView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4D51EB28FE559800260DA8 /* hacker_newsApp.swift */,
+				9A4D520B2900F8F900260DA8 /* Extensions */,
 				9A4D520228FEF0F700260DA8 /* Models */,
 				9A4D520128FEE9C500260DA8 /* Views */,
 				9A4D51FC28FEA6E100260DA8 /* ViewModels */,
@@ -105,6 +110,7 @@
 			children = (
 				9A4D51FF28FEE9BD00260DA8 /* StoryListView.swift */,
 				9A4D5207290028CD00260DA8 /* StoryDetailView.swift */,
+				9A4D52092900F41600260DA8 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,6 +121,14 @@
 				9A4D520328FEF10A00260DA8 /* Story.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9A4D520B2900F8F900260DA8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A4D520C2900F91B00260DA8 /* WKWebView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,11 +202,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A4D51FE28FEA70D00260DA8 /* StoryListViewModel.swift in Sources */,
+				9A4D520D2900F91B00260DA8 /* WKWebView+Extensions.swift in Sources */,
 				9A4D51EE28FE559800260DA8 /* ContentView.swift in Sources */,
 				9A4D520028FEE9BD00260DA8 /* StoryListView.swift in Sources */,
 				9A4D520628FFB04A00260DA8 /* StoryDetailViewModel.swift in Sources */,
 				9A4D51EC28FE559800260DA8 /* hacker_newsApp.swift in Sources */,
 				9A4D51FB28FE765F00260DA8 /* Webservice.swift in Sources */,
+				9A4D520A2900F41600260DA8 /* WebView.swift in Sources */,
 				9A4D520428FEF10A00260DA8 /* Story.swift in Sources */,
 				9A4D5208290028CD00260DA8 /* StoryDetailView.swift in Sources */,
 			);

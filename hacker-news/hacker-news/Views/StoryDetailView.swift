@@ -16,6 +16,7 @@ struct StoryDetailView: View {
     
     var body: some View {
         Text("\(vm.title)")
+        WebView(url: vm.url)
     }
 }
 
